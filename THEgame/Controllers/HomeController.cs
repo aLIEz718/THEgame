@@ -22,6 +22,7 @@ namespace THEgame.Controllers
         {
 
             model.modelV = solutionV(model);
+            model.modelA = solutionA(model);
             model.HeaderText = "MOTHER OF GOOOOOOOOOOD";
             ViewData["Title"] = "weedSoldiers";            
             return View(model);
@@ -44,10 +45,15 @@ namespace THEgame.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        public IndexModel solutionA(IndexModel model)
+        public IActionResult Admin(AdminModel model)
         {
-            var a = 30;
-            return model;
+            return View(model);
+        }
+        public SolutionAModel solutionA(IndexModel model)
+        {
+            model.modelA = new SolutionAModel();
+            model.modelA.boos = 30;
+            return model.modelA;
         }
         public SolutionVModel solutionV(IndexModel model)
         {

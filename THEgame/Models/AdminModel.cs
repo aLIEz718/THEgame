@@ -2,7 +2,7 @@ using System;
 
 namespace THEgame.Models
 {
-    public class SolutionAModel
+    public class AdminModel
     {
         public int boos{ get; set; }
     }

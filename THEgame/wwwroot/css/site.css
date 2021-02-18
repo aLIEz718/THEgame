@@ -89,11 +89,11 @@ body {
     border: 1px solid blue;
     width: 100px;
     height: 100px;
-    background-color:wheat;
+    background-color: wheat;
     text-align: center;
     font-size: 50px;
     margin-left: 18%;
-=======
+}
 .video-container {
     background: #000;
     width: 80%;
@@ -147,5 +147,4 @@ body {
     background: #ccc;
     width: 30px;
     border-radius: 0 0 100px 100px;
->>>>>>> 775082823db5c94e239b014bb75395965a267786
 }
