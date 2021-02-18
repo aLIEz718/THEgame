@@ -11,7 +11,6 @@ C:\TheGame\THEgame\THEgame\bin\Release\netcoreapp3.1\THEgame.Views.dll
 C:\TheGame\THEgame\THEgame\bin\Release\netcoreapp3.1\THEgame.Views.pdb
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.AssemblyInfoInputs.cache
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.AssemblyInfo.cs
-C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.csproj.CoreCompileInputs.cache
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.MvcApplicationPartsAssemblyInfo.cache
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.RazorAssemblyInfo.cache
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.RazorAssemblyInfo.cs
@@ -31,7 +30,6 @@ C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\staticwebassets\THEgame.Sta
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\staticwebassets\THEgame.StaticWebAssets.xml
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.dll
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.pdb
-C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.genruntimeconfig.cache
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.csproj.CopyComplete
 C:\THEgame\THEgame\bin\Release\netcoreapp3.1\appsettings.Development.json
 C:\THEgame\THEgame\bin\Release\netcoreapp3.1\appsettings.json

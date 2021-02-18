@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\THEgame\\THEgame\\THEgame.csproj": {}
+    "C:\\THEgame\\THEgame\\THEgame\\THEgame.csproj": {}
   },
   "projects": {
-    "C:\\THEgame\\THEgame\\THEgame.csproj": {
+    "C:\\THEgame\\THEgame\\THEgame\\THEgame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\THEgame\\THEgame\\THEgame.csproj",
+        "projectUniqueName": "C:\\THEgame\\THEgame\\THEgame\\THEgame.csproj",
         "projectName": "THEgame",
-        "projectPath": "C:\\THEgame\\THEgame\\THEgame.csproj",
+        "projectPath": "C:\\THEgame\\THEgame\\THEgame\\THEgame.csproj",
         "packagesPath": "C:\\Users\\Vladimir\\.nuget\\packages\\",
-        "outputPath": "C:\\THEgame\\THEgame\\obj\\",
+        "outputPath": "C:\\THEgame\\THEgame\\THEgame\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Vladimir\\AppData\\Roaming\\NuGet\\NuGet.Config",
