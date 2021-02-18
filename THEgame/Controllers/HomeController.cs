@@ -21,8 +21,8 @@ namespace THEgame.Controllers
         public IActionResult Index(IndexModel model)
         {
             model = solutionV(model);
-            model.HeaderText = "ГУШЬ ГУЩЬ ГАЩЬ ГАЩЬ";
-            ViewData["Title"] = "ГУШЬ ГУЩЬ ГАЩЬ ГАЩЬ";            
+            model.HeaderText = "MOTHER OF GOOOOOOOOOOD";
+            ViewData["Title"] = "weedSoldiers";            
             return View(model);
         }
 
