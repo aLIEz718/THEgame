@@ -56,7 +56,6 @@ C:\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.TagHelpers.input.cache
 C:\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.TagHelpers.output.cache
 C:\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.RazorCoreGenerate.cache
 C:\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -70,3 +69,6 @@ C:\THEgame\THEgame\obj\Release\netcoreapp3.1\staticwebassets\THEgame.StaticWebAs
 C:\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.dll
 C:\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.pdb
 C:\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.csproj.CopyComplete
+C:\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Home\Rules.cshtml.g.cs
+C:\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Home\SolutionA.cshtml.g.cs
+C:\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Home\SolutionV.cshtml.g.cs
