@@ -3,3 +3,6 @@
 *.exe
 *.config
 *.suo
+.suo
+*.csproj
+*.assets
