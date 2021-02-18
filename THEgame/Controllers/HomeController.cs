@@ -20,7 +20,7 @@ namespace THEgame.Controllers
 
         public IActionResult Index(IndexModel model)
         {
-            model = solutionV(model);
+            model.modelV = solutionV(model);
             model.HeaderText = "ГУШЬ ГУЩЬ ГАЩЬ ГАЩЬ";
             ViewData["Title"] = "ГУШЬ ГУЩЬ ГАЩЬ ГАЩЬ";            
             return View(model);
@@ -48,9 +48,28 @@ namespace THEgame.Controllers
             var a = 30;
             return model;
         }
-        public IndexModel solutionV(IndexModel model)
-        {           
-            return model;
+        public SolutionVModel solutionV(IndexModel model)
+        {
+            model.modelV = new SolutionVModel();
+            model.modelV.numbers = new List<int>() { 36, 11, 20 };
+            model.modelV.a = 0;            
+            model.modelV.c = 0;
+            for (int i = 0; i < 3; i++) {
+                if (model.modelV.numbers[i] > model.modelV.a)
+                {
+                    model.modelV.a = model.modelV.numbers[i];
+                }
+            }
+            model.modelV.b = model.modelV.a;
+            for (int i = 0; i < 3; i++)
+            {
+                if (model.modelV.numbers[i] < model.modelV.b)
+                {
+                    model.modelV.b = model.modelV.numbers[i];
+                }
+            }
+            model.modelV.c = model.modelV.a - model.modelV.b;
+            return model.modelV;
         }
     }
 }

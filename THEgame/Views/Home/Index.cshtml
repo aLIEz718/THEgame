@@ -1,14 +1,17 @@
 ﻿@model IndexModel
 <html>
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-    </head>
-    <body>
-        <h1 class="display-4">@Model.HeaderText</h1>
-        <div class="solflex">
-        @Html.Partial("SolutionV")        
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1 class="display-4">@Model.HeaderText</h1>
+    <div class="solflex">
+        @Html.Partial("SolutionV")
+
         @Html.Partial("SolutionA")
-            </div>
-    </body>
+        <div class="solans">@Model.modelV.c</div>
+    </div>
+
+</body>
 </html>
