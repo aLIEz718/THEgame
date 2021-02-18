@@ -20,8 +20,9 @@ namespace THEgame.Controllers
 
         public IActionResult Index(IndexModel model)
         {
+            model = solutionV(model);
             model.HeaderText = "ГУШЬ ГУЩЬ ГАЩЬ ГАЩЬ";
-            ViewData["Title"] = "ГУШЬ ГУЩЬ ГАЩЬ ГАЩЬ";
+            ViewData["Title"] = "ГУШЬ ГУЩЬ ГАЩЬ ГАЩЬ";            
             return View(model);
         }
 
@@ -42,10 +43,14 @@ namespace THEgame.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        public int solution()
+        public IndexModel solutionA(IndexModel model)
         {
             var a = 30;
-            return a;
+            return model;
+        }
+        public IndexModel solutionV(IndexModel model)
+        {           
+            return model;
         }
     }
 }
