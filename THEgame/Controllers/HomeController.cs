@@ -25,11 +25,18 @@ namespace THEgame.Controllers
             return View(model);
         }
 
-        public IActionResult Privacy()
+        public IActionResult SolutionV(SolutionVModel model)
+        {
+            return PartialView(model);
+        }
+        public IActionResult SolutionA(SolutionAModel model)
+        {
+            return PartialView(model);
+        }
+        public IActionResult Rules()
         {
             return View();
         }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
