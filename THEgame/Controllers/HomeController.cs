@@ -18,9 +18,11 @@ namespace THEgame.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(IndexModel model)
         {
-            return View();
+            model.HeaderText = "ГУШЬ ГУЩЬ ГАЩЬ ГАЩЬ";
+            ViewData["Title"] = "ГУШЬ ГУЩЬ ГАЩЬ ГАЩЬ";
+            return View(model);
         }
 
         public IActionResult Privacy()
