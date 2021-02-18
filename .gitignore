@@ -1,3 +1,5 @@
 *.pubxml
 *.dll
 *.exe
+*.config
+*.suo
