@@ -20,9 +20,15 @@ namespace THEgame.Controllers
 
         public IActionResult Index(IndexModel model)
         {
+<<<<<<< HEAD
             model.modelV = solutionV(model);
             model.HeaderText = "ГУШЬ ГУЩЬ ГАЩЬ ГАЩЬ";
             ViewData["Title"] = "ГУШЬ ГУЩЬ ГАЩЬ ГАЩЬ";            
+=======
+            model = solutionV(model);
+            model.HeaderText = "MOTHER OF GOOOOOOOOOOD";
+            ViewData["Title"] = "weedSoldiers";            
+>>>>>>> 775082823db5c94e239b014bb75395965a267786
             return View(model);
         }
 
