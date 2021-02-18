@@ -9,7 +9,6 @@ C:\TheGame\THEgame\THEgame\bin\Release\netcoreapp3.1\THEgame.dll
 C:\TheGame\THEgame\THEgame\bin\Release\netcoreapp3.1\THEgame.pdb
 C:\TheGame\THEgame\THEgame\bin\Release\netcoreapp3.1\THEgame.Views.dll
 C:\TheGame\THEgame\THEgame\bin\Release\netcoreapp3.1\THEgame.Views.pdb
-C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.csprojAssemblyReference.cache
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.AssemblyInfoInputs.cache
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.AssemblyInfo.cs
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.csproj.CoreCompileInputs.cache
