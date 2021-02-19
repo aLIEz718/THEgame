@@ -12,6 +12,9 @@ namespace THEgame.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        #region Dependency
+        public IDBase dBase { get; set; }
+        #endregion
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -52,8 +55,10 @@ namespace THEgame.Controllers
         public SolutionAModel solutionA(IndexModel model)
         {
             model.modelA = new SolutionAModel();
-            return model.modelA;
-            
+            dBase = new Dbase();
+            dBase.SetName("Андрей");           
+            model.modelA.BufferedString = dBase.GetName();
+            return model.modelA;            
         }
         public SolutionVModel solutionV(IndexModel model)
         {

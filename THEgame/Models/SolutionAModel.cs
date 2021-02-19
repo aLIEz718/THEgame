@@ -4,6 +4,6 @@ namespace THEgame.Models
 {
     public class SolutionAModel
     {
-        public int boos{ get; set; }
+        public string BufferedString{ get; set; }
     }
 }
