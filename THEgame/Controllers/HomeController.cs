@@ -56,7 +56,7 @@ namespace THEgame.Controllers
         {
             model.modelA = new SolutionAModel();
             dBase = new Dbase();
-            dBase.SetName("Андрей");           
+            dBase.SetName("Вован");           
             model.modelA.BufferedString = dBase.GetName();
             return model.modelA;            
         }
