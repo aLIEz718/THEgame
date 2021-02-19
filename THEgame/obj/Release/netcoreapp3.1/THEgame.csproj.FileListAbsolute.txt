@@ -73,3 +73,5 @@ C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Home\SolutionV.
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.csprojAssemblyReference.cache
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Home\Admin.cshtml.g.cs
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.MvcApplicationPartsAssemblyInfo.cache
+C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.csproj.CoreCompileInputs.cache
+C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.genruntimeconfig.cache
