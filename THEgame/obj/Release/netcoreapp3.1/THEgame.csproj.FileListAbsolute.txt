@@ -11,7 +11,6 @@ C:\TheGame\THEgame\THEgame\bin\Release\netcoreapp3.1\THEgame.Views.dll
 C:\TheGame\THEgame\THEgame\bin\Release\netcoreapp3.1\THEgame.Views.pdb
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.AssemblyInfoInputs.cache
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.AssemblyInfo.cs
-C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.MvcApplicationPartsAssemblyInfo.cache
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.RazorAssemblyInfo.cache
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.RazorAssemblyInfo.cs
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.TagHelpers.input.cache
@@ -73,3 +72,4 @@ C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Home\SolutionA.
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Home\SolutionV.cshtml.g.cs
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.csprojAssemblyReference.cache
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Home\Admin.cshtml.g.cs
+C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.MvcApplicationPartsAssemblyInfo.cache

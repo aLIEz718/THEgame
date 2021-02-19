@@ -5,4 +5,8 @@
     <UserSecretsId>a60e41ea-eb66-42b9-b28b-65e0306b6387</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.Linq.Expressions" Version="4.3.0" />
+  </ItemGroup>
+
 </Project>
