@@ -52,8 +52,8 @@ namespace THEgame.Controllers
         public SolutionAModel solutionA(IndexModel model)
         {
             model.modelA = new SolutionAModel();
-            model.modelA.boos = 30;
             return model.modelA;
+            
         }
         public SolutionVModel solutionV(IndexModel model)
         {
