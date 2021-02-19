@@ -44,8 +44,7 @@ function videoAct() { //Запускаем или ставим на паузу
 
     if (durationTime.innerHTML == '00:00') {
 
-        durationTime.innerHTML = videoTime(videoPlayer.duration); //Об этой функции чуть ниже
-
+        durationTime.innerHTML = videoTime(videoPlayer.duration);
     }
 
 }
@@ -54,6 +53,7 @@ function videoAct() { //Запускаем или ставим на паузу
 actionButton.addEventListener('click', videoAct);
 
 videoPlayer.addEventListener('click', videoAct);
+
 function videoTime(time) { //Рассчитываем время в секундах и минутах
 
     time = Math.floor(time);

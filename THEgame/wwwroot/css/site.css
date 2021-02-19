@@ -136,10 +136,12 @@ body {
 
 .video-hud__mute_true {
     background: #c00;
+
 }
 
 .video-hud__mute_false {
     background: #ccc;
+    
 }
 
 .video-hud__download {
