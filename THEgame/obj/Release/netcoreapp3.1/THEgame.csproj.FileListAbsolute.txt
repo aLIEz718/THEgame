@@ -72,4 +72,5 @@ C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Home\SolutionA.
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Home\SolutionV.cshtml.g.cs
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.csprojAssemblyReference.cache
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Home\Admin.cshtml.g.cs
+C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Solutions\Solution0.cshtml.g.cs
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.MvcApplicationPartsAssemblyInfo.cache
