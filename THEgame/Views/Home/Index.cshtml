@@ -1,6 +1,11 @@
 ﻿@model IndexModel
-    <h1 class="display-4">@Model.HeaderText</h1>
-    <div class="solflex">
-        @Html.Partial("SolutionV")
-        @Html.Partial("SolutionA")        
-    </div>
+<blockquote class="blockquote text-center">
+    <p class="mb-1">@Model.HeaderText</p>
+    <br />
+    <footer class="blockquote-footer">Моршу <cite title="Source Title">Тот Самый</cite></footer>
+</blockquote>
+
+<div class="solflex">
+    @Html.Partial("SolutionV")
+    @Html.Partial("SolutionA")        
+</div>

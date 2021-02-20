@@ -26,7 +26,7 @@ namespace THEgame.Controllers
 
             model.modelV = solutionV(model);
             model.modelA = solutionA(model);
-            model.HeaderText = "MOTHER OF GOOOOOOOOOOD BITCHES";
+            model.HeaderText = "Lamp Oil, Rope, Bombs You Want It It's Yours My Friend As Long As You Have Enough Rubies";
             
             ViewData["Title"] = "weedSoldiers";            
             return View(model);
