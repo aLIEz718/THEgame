@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using THEgame.Models;
@@ -20,18 +21,15 @@ namespace THEgame.Controllers
         {
             _logger = logger;
         }
-
+        [Authorize]
         public IActionResult Index(IndexModel model)
         {
-            if (HttpContext.Request.Cookies.ContainsKey("logchecky")) { 
             model.modelV = solutionV(model);
             model.modelA = solutionA(model);
             model.HeaderText = "Lamp Oil, Rope, Bombs You Want It It's Yours My Friend As Long As You Have Enough Rubies";
             
             ViewData["Title"] = "weedSoldiers";            
             return View(model);
-            }
-            return Redirect("/Account/Login");
         }
 
         public IActionResult SolutionV(SolutionVModel model)
@@ -42,21 +40,15 @@ namespace THEgame.Controllers
         {
             return PartialView(model);
         }
+        [Authorize]
         public IActionResult Rules()
         {
-            if (HttpContext.Request.Cookies.ContainsKey("logchecky"))
-            {
                 return View();
-            }
-            return Redirect("/Account/Login");
         }
+        [Authorize]
         public IActionResult Admin(AdminModel model)
         {
-            if (HttpContext.Request.Cookies.ContainsKey("logchecky"))
-            {
                 return View(model);
-            }
-            return Redirect("/Account/Login");
         }
         public SolutionAModel solutionA(IndexModel model)
         {

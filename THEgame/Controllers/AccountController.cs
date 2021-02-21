@@ -6,55 +6,85 @@ using THEgame.ViewModels; // пространство имен моделей Re
 using THEgame.Models; // пространство имен UserContext и класса User
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using System.Web;
-using System.Collections.Specialized;
-using System.Reflection;
 using Microsoft.AspNetCore.Http;
-using System.Net;
+using Microsoft.EntityFrameworkCore;
+
 namespace THEgame.Controllers
 {
     public class AccountController : Controller
     {
+        private UserContext db;
+        public AccountController(UserContext context)
+        {
+            db = context;
+        }
         [HttpGet]
         public IActionResult Login()
         {
-            if (!HttpContext.Request.Cookies.ContainsKey("logchecky"))
-            {
-                HttpContext.Response.Cookies.Append("logcheckn", "n");
-
-                return View();
-            }
-            else {
-                if (HttpContext.Request.Cookies.ContainsKey("logcheckn"))
-                {
-                    HttpContext.Response.Cookies.Delete("logchecky");
-                    HttpContext.Response.Cookies.Delete("Name");
-                    return View();
-                }
-                else { 
-                return Redirect("/Home/Index");
-                }
-            }
+            return View();
         }
         [HttpPost]
-        public IActionResult Login(LoginModel model)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginModel model)
         {
-            if (HttpContext.Request.Cookies.ContainsKey("logcheckn"))
+            if (ModelState.IsValid)
             {
-                if (model.Name == "Admin" && model.Password == "Admin")
+                UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Name == model.Name && u.Password == model.Password);
+                if (user != null)
                 {
-                    HttpContext.Response.Cookies.Append("logchecky", "y");
-                    HttpContext.Response.Cookies.Append("Name", "Admin");
-                    return Redirect("/Home/Index");
+                    await Authenticate(model.Name); // аутентификация
+
+                    return RedirectToAction("Index", "Home");
+                }
+                ModelState.AddModelError("", "Некорректные логин и(или) пароль");
+            }
+            return View(model);
+        }
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(RegisterModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Name == model.Name);
+                if (user == null)
+                {
+                    // добавляем пользователя в бд
+                    db.Users.Add(new UserModel { Name = model.Name, Password = model.Password });
+                    await db.SaveChangesAsync();
+
+                    await Authenticate(model.Name); // аутентификация
+
+                    return RedirectToAction("Index", "Home");
                 }
                 else
-                {
-                    return View();
-                }
+                    ModelState.AddModelError("", "Некорректные логин и(или) пароль");
             }
-            else {
-                return View();
-            }
+            return View(model);
+        }
+
+        private async Task Authenticate(string userName)
+        {
+            // создаем один claim
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimsIdentity.DefaultNameClaimType, userName)
+            };
+            // создаем объект ClaimsIdentity
+            ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
+            // установка аутентификационных куки
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Login", "Account");
         }
     }
 }

@@ -9,6 +9,8 @@ using THEgame.Models;
 using THEgame.Models.Solutions;
 //-----------------------
 using THEgame.DeepLogic.Solutions;
+using Microsoft.AspNetCore.Authorization;
+
 namespace THEgame.Controllers
 {
     public class SolutionsController : Controller
@@ -23,12 +25,10 @@ namespace THEgame.Controllers
         {
             _logger = logger;
         }
-
+        [Authorize]
         public IActionResult Solution0(Solution0Model model)
         {
-            if (HttpContext.Request.Cookies.ContainsKey("logchecky"))
-            {
-                model.Imodel =  new IndexModel();
+            model.Imodel =  new IndexModel();
             model.Imodel.modelA = new SolutionAModel();            
 
             soler = new SolutionDL();
@@ -37,8 +37,6 @@ namespace THEgame.Controllers
 
             model.RandNumber = soler.GetInt(0, 100);
             return View(model);
-            }
-            return Redirect("/Account/Login");
         }
     }
 }
