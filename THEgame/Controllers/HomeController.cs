@@ -23,13 +23,15 @@ namespace THEgame.Controllers
 
         public IActionResult Index(IndexModel model)
         {
-
+            if (HttpContext.Request.Cookies.ContainsKey("logchecky")) { 
             model.modelV = solutionV(model);
             model.modelA = solutionA(model);
             model.HeaderText = "Lamp Oil, Rope, Bombs You Want It It's Yours My Friend As Long As You Have Enough Rubies";
             
             ViewData["Title"] = "weedSoldiers";            
             return View(model);
+            }
+            return Redirect("/Account/Login");
         }
 
         public IActionResult SolutionV(SolutionVModel model)
@@ -42,16 +44,19 @@ namespace THEgame.Controllers
         }
         public IActionResult Rules()
         {
-            return View();
-        }
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            if (HttpContext.Request.Cookies.ContainsKey("logchecky"))
+            {
+                return View();
+            }
+            return Redirect("/Account/Login");
         }
         public IActionResult Admin(AdminModel model)
         {
-            return View(model);
+            if (HttpContext.Request.Cookies.ContainsKey("logchecky"))
+            {
+                return View(model);
+            }
+            return Redirect("/Account/Login");
         }
         public SolutionAModel solutionA(IndexModel model)
         {
@@ -62,26 +67,7 @@ namespace THEgame.Controllers
             return model.modelA;            
         }
         public SolutionVModel solutionV(IndexModel model)
-        {
-            model.modelV = new SolutionVModel();
-            model.modelV.numbers = new List<int>() { 36, 11, 20 };
-            model.modelV.a = 0;            
-            model.modelV.c = 0;
-            for (int i = 0; i < 3; i++) {
-                if (model.modelV.numbers[i] > model.modelV.a)
-                {
-                    model.modelV.a = model.modelV.numbers[i];
-                }
-            }
-            model.modelV.b = model.modelV.a;
-            for (int i = 0; i < 3; i++)
-            {
-                if (model.modelV.numbers[i] < model.modelV.b)
-                {
-                    model.modelV.b = model.modelV.numbers[i];
-                }
-            }
-            model.modelV.c = model.modelV.a - model.modelV.b;
+        {            
             return model.modelV;
         }
     }

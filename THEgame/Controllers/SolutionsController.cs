@@ -26,7 +26,9 @@ namespace THEgame.Controllers
 
         public IActionResult Solution0(Solution0Model model)
         {
-            model.Imodel =  new IndexModel();
+            if (HttpContext.Request.Cookies.ContainsKey("logchecky"))
+            {
+                model.Imodel =  new IndexModel();
             model.Imodel.modelA = new SolutionAModel();            
 
             soler = new SolutionDL();
@@ -35,6 +37,8 @@ namespace THEgame.Controllers
 
             model.RandNumber = soler.GetInt(0, 100);
             return View(model);
+            }
+            return Redirect("/Account/Login");
         }
     }
 }
