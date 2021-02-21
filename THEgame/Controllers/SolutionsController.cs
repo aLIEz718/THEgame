@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace THEgame.Controllers
 {
+    [Authorize]
     public class SolutionsController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -25,7 +26,7 @@ namespace THEgame.Controllers
         {
             _logger = logger;
         }
-        [Authorize]
+        
         public IActionResult Solution0(Solution0Model model)
         {
             model.Imodel =  new IndexModel();

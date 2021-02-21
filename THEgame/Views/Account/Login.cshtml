@@ -12,6 +12,9 @@
             <input asp-for="Password" class="form-control-sm" />
             <span asp-validation-for="Password" />
         </div>
+        <div>
+            <span class="regtext">Забыл старую или еще нету?<a asp-area="" asp-controller="Account" asp-action="Register">Создай новую!</a></span>
+        </div>
         <hr />
         <div class="form-group">
             <input type="submit" value="Войти" class="btn btn-outline-dark" />
