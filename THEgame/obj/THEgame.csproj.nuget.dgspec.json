@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\THEgame\\THEgame\\THEgame\\THEgame.csproj": {}
+    "C:\\TheGame\\THEgame\\THEgame\\THEgame.csproj": {}
   },
   "projects": {
-    "C:\\THEgame\\THEgame\\THEgame\\THEgame.csproj": {
+    "C:\\TheGame\\THEgame\\THEgame\\THEgame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\THEgame\\THEgame\\THEgame\\THEgame.csproj",
+        "projectUniqueName": "C:\\TheGame\\THEgame\\THEgame\\THEgame.csproj",
         "projectName": "THEgame",
-        "projectPath": "C:\\THEgame\\THEgame\\THEgame\\THEgame.csproj",
-        "packagesPath": "C:\\Users\\Vladimir\\.nuget\\packages\\",
-        "outputPath": "C:\\THEgame\\THEgame\\THEgame\\obj\\",
+        "projectPath": "C:\\TheGame\\THEgame\\THEgame\\THEgame.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\TheGame\\THEgame\\THEgame\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Vladimir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -73,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.112\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
