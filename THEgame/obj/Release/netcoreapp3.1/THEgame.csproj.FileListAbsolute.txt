@@ -73,4 +73,7 @@ C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Home\SolutionV.
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.csprojAssemblyReference.cache
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Home\Admin.cshtml.g.cs
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Solutions\Solution0.cshtml.g.cs
+C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.MvcApplicationPartsAssemblyInfo.cache
+C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Shared\_LayoutLogin.cshtml.g.cs
+C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Shared\_LayoutError.cshtml.g.cs
