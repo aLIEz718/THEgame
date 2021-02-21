@@ -77,3 +77,5 @@ C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Account\Login.c
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.MvcApplicationPartsAssemblyInfo.cache
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Shared\_LayoutLogin.cshtml.g.cs
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Shared\_LayoutError.cshtml.g.cs
+C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.csproj.CoreCompileInputs.cache
+C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.genruntimeconfig.cache
