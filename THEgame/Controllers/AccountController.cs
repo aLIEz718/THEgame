@@ -34,6 +34,8 @@ namespace THEgame.Controllers
                 {
                     await Authenticate(model.Name); // аутентификация
 
+                    HttpContext.Response.Cookies.Append("UserId", user.Id.ToString());
+
                     return RedirectToAction("Index", "Home");
                 }
                 ModelState.AddModelError("", "Некорректные логин и(или) пароль");

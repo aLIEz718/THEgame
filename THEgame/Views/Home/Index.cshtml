@@ -1,11 +1,60 @@
 ﻿@model IndexModel
+@{       
+    ViewData["Title"] = "weedSoldiers";     
+}
 <blockquote class="blockquote text-center">
-    <p class="mb-1">@Model.HeaderText</p>
+    <p class="mb-1">Lamp Oil, Rope, Bombs You Want It It's Yours My Friend As Long As You Have Enough Rupies
+     </p>
     <br />
     <footer class="blockquote-footer" style="text-align:right;">Моршу <cite title="Source Title">тот самый</cite></footer>
 </blockquote>
 
 <div class="solflex">
-    @Html.Partial("IndexLeft")
+    @*Html.Partial("IndexLeft")*@
+<form asp-action="Index" asp-controller="Home" asp-anti-forgery="true" class="codetext">
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+    <img src="https://i.pinimg.com/originals/9a/a2/6a/9aa26a185905ed03cf9f10c435e7d95e.jpg" class="linkimg" />
+    <div>
+        <h4 class="display-4">Settings</h4>
+        <div class="border-top gender">Пол персонажа:
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="flexRadioDefault1" asp-for="Sex" value="Мужской">
+            <label class="form-check-label" for="flexRadioDefault1">
+                Мужской
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="flexRadioDefault2" asp-for="Sex" value="Женский">
+            <label class="form-check-label" for="flexRadioDefault2">
+                Женский
+            </label>
+        </div>
+        <div class="form-check border-bottom">
+            <input class="form-check-input" type="radio" id="flexRadioDefault3" asp-for="Sex" value="Другой">
+            <label class="form-check-label" for="flexRadioDefault3">
+                Другой
+            </label>
+        </div>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label" for="flex1">
+                Раса
+            </label>
+            <input class="form-control" type="text" id="flex1" asp-for="Race">
+            
+        </div>
+        <div class="form-check">
+            <label class="form-check-label" for="flex2">
+                Описание расы
+            </label>
+            <textarea class="form-control" id="flex2" rows="3" asp-for="RaceDis"></textarea>                   
+        </div>
+        <button type="submit" class="btn btn-info" style="margin-top: 3px; margin-left: 150px;">Сохранить</button>
+    </div>
+</form>
     @Html.Partial("IndexRight")        
 </div>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+    });
+</script>

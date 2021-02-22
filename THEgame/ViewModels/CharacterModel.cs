@@ -1,11 +1,9 @@
-using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace THEgame.Models
+namespace THEgame.ViewModels
 {
-    public class SolutionVModel
+    public class CharacterModel
     {
-        public int Id { get; set; }
         public string Sex { get; set; }
         public string Race { get; set; }
         public string RaceDis { get; set; }
