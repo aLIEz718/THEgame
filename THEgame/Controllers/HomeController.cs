@@ -10,6 +10,7 @@ using THEgame.Models;
 
 namespace THEgame.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -21,7 +22,7 @@ namespace THEgame.Controllers
         {
             _logger = logger;
         }
-        [Authorize]
+        
         public IActionResult Index(IndexModel model)
         {
             model.modelV = solutionV(model);
@@ -32,20 +33,20 @@ namespace THEgame.Controllers
             return View(model);
         }
 
-        public IActionResult SolutionV(SolutionVModel model)
+        public IActionResult IndexLeft(SolutionVModel model)
         {
             return PartialView(model);
         }
-        public IActionResult SolutionA(SolutionAModel model)
+        public IActionResult IndexRight(SolutionAModel model)
         {
             return PartialView(model);
         }
-        [Authorize]
+        
         public IActionResult Rules()
         {
                 return View();
         }
-        [Authorize]
+        
         public IActionResult Admin(AdminModel model)
         {
                 return View(model);
