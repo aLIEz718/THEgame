@@ -127,3 +127,5 @@ C:\THEgame\THEgame\THEgame\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandar
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Home\IndexLeft.cshtml.g.cs
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Home\IndexRight.cshtml.g.cs
+C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.csproj.CoreCompileInputs.cache
+C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.genruntimeconfig.cache
