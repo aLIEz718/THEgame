@@ -13,5 +13,6 @@ namespace THEgame.Models
         public string Sex { get; set; }
         public string Race { get; set; }
         public string RaceDis { get; set; }
+        public int CurLocationId { get; set; }
     }
 }

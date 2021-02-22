@@ -27,16 +27,12 @@ namespace THEgame.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            /*IndexModel model = new IndexModel();
-            model.modelV = solutionV(model);
-            model.modelA = solutionA(model);*/
             var cookieid = Int32.Parse(HttpContext.Request.Cookies.FirstOrDefault(x => x.Key == "UserId").Value);
             UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Id == cookieid );
-            ViewData["Id"] = user.Id;           
-            ViewData["Sex"] = user.Sex;
-            ViewData["Race"] = user.Race;
-            ViewData["RaceDis"] = user.RaceDis;
+            ViewData["UserLocation"] = "Solution" + user.CurLocationId;
+
             IndexModel model = new IndexModel() { Id = user.Id, Sex = user.Sex, Race = user.Race, RaceDis = user.RaceDis };
+            
             return View(model);
         }
         [HttpPost]
@@ -72,14 +68,20 @@ namespace THEgame.Controllers
             return PartialView(model);
         }
         
-        public IActionResult Rules()
+        public async Task<IActionResult> RulesAsync()
         {
-                return View();
+            var cookieid = Int32.Parse(HttpContext.Request.Cookies.FirstOrDefault(x => x.Key == "UserId").Value);
+            UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Id == cookieid);
+            ViewData["UserLocation"] = "Solution" + user.CurLocationId;
+            return View();
         }
         
-        public IActionResult Admin(AdminModel model)
+        public async Task<IActionResult> AdminAsync(AdminModel model)
         {
-                return View(model);
+            var cookieid = Int32.Parse(HttpContext.Request.Cookies.FirstOrDefault(x => x.Key == "UserId").Value);
+            UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Id == cookieid);
+            ViewData["UserLocation"] = "Solution" + user.CurLocationId;
+            return View(model);
         }
         public SolutionAModel solutionA(IndexModel model)
         {

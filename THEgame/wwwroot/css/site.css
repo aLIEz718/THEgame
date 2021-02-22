@@ -29,6 +29,11 @@ a {
     z-index: 1;
     max-height: 40px;
 }
+.containerbody {
+    z-index: 1;
+    min-height: 600px;
+    margin: 0 16%;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -76,18 +81,24 @@ body {
     width: 100%;
     white-space: nowrap;
     line-height: 60px; /* Vertically center the text there */
+    margin-bottom: 1.2%;
 }
 
 .codetext {
     display: flex;
     align-items: stretch;
-    padding: 0 10px;
+    padding: 10px;
+    text-shadow: white 0 0 2px;
     margin: 3px;
     max-height: 550px;
     text-align: left;
     color: #0e5135;
-    font-size: large;
+    font-size: 15px;
+    font-weight:bold;
 }
+    .codetext input {
+        color: #0e5135;
+    }
 
 .solflex {
     display: flex;
@@ -155,7 +166,71 @@ body {
 }
 .linkimg {
     max-width: 50%;
+    max-height: 500px;
+    position: absolute;
+    right: 80%;
+    opacity: 0.7;
+    z-index: -1;
 }
 .gender {
     padding: 5px;
+}
+.locationcanvas {
+    display: flex;    
+    min-height: 800px;
+}
+.canvasimg {
+    max-width: 77.75%;
+    max-height: 50%;
+    border: 10px groove brown;
+}
+.canvasbuttons {
+    text-decoration: none;
+    display: block;
+    min-width: 22.25%;
+    max-height: 65px;
+    font-size: 25px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+.canvaslog {
+    min-height: 30%;
+}
+.canvasppl {
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 15px;
+    font-weight: bold;
+    text-shadow: white 0 0 2px;
+    min-height: 30%;
+    border: 10px groove brown;
+}
+    .canvasppl ul {
+        padding-left: 15%;
+    }
+    .canvasppl li {
+        padding: 0;
+        list-style: none;
+    }
+
+.canvasright {
+    min-width: 22.25%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-left: 3px;
+}
+.namebtn {
+    width: 10px;
+    height: 10px;
+}
+.titlesol {
+    height: 43px;
+    position: absolute;
+    top: 1%;
+    left: 45%;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 1px 1px 1px black;
 }

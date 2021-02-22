@@ -26,6 +26,7 @@
         "dependencies": {
           "EntityFramework": "6.4.4",
           "Microsoft.EntityFrameworkCore": "5.0.3",
+          "Microsoft.EntityFrameworkCore.Analyzers": "5.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.3",
           "System.IO": "4.3.0",
           "System.Linq.Expressions": "4.3.0",

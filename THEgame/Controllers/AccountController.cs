@@ -86,6 +86,7 @@ namespace THEgame.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            HttpContext.Response.Cookies.Delete("UserId");
             return RedirectToAction("Login", "Account");
         }
     }

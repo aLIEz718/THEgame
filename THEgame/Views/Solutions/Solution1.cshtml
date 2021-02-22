@@ -1,0 +1,26 @@
+﻿@using THEgame.Models.Solutions
+@model Solution1Model
+<h4 class="titlesol">@ViewData["Title"]</h4>
+<div class="locationcanvas">
+    <img class="canvasimg" src="~/MG9Ebpiu5Bs.jpg" />
+    <div class="canvasright">
+        <a class="btn btn-light canvasbuttons" asp-area="" asp-controller="Solutions" asp-action="Solution2">Путь Героя</a>
+        <div class="canvaslog"></div>
+        <div class="canvasppl">
+            <span class="border-bottom">Игроки в этой локации</span>
+            @foreach (UserModel country in ViewBag.Users)
+            {
+                <ul>
+                    <li class="border-bottom">@country.Name <input type="checkbox" id="@country.Id" class="form-check" title="Пол: @country.Sex; Раса: @country.Race;"></li>
+                </ul>
+            }
+    </div>
+</div>
+</div>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        for (let i = 1; i <= 4; i++) {
+            $("#" + i).tooltip();
+        }
+    });
+</script>

@@ -150,3 +150,12 @@ body {
         padding: 10px;
         text-shadow: white 0 0 2px;
     }
+.imgtopmenu {
+    min-width: 45px;
+}
+.linkimg {
+    max-width: 50%;
+}
+.gender {
+    padding: 5px;
+}

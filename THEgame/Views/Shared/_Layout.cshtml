@@ -29,7 +29,10 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Solutions" asp-action="Solution0">Доска объявлений</a>
-                        </li>                        
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Solutions" asp-action="@(ViewData["UserLocation"])" id="location">В локацию</a>
+                        </li> 
                     </ul>                    
                 </div>
                 <div class="nav-item" style="text-align:right;">
@@ -38,7 +41,7 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="containerbody">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -46,7 +49,7 @@
 
     <footer class="footer text-muted">
         <div class="container">
-            &copy; 2021 - THEgame - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2021 - THEgame - Свобода выбора
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
