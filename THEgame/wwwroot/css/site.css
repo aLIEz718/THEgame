@@ -193,6 +193,7 @@ body {
     padding: 10px;
     text-align: center;
     border-radius: 5px;
+    text-shadow: black 0 0 1px;
 }
 .canvaslog {
     min-height: 30%;
@@ -232,5 +233,5 @@ body {
     border: 1px solid gray;
     border-radius: 10px;
     padding: 5px;
-    box-shadow: 1px 1px 1px black;
+    box-shadow: 0px 1px 1px black;
 }
