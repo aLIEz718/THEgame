@@ -1,17 +1,20 @@
 ﻿@using THEgame.Models.Solutions
 @model Solution1Model
 <h4 class="titlesol">@ViewData["Title"]</h4>
-<form class="locationcanvas">
+<form asp-action="SendMessage" asp-controller="Solutions" class="locationcanvas">
     <img class="canvasimg" src="~/YWMcR_3X0WI.jpg" />
     <div class="canvasright">
         <a class="btn btn-light canvasbuttons" asp-area="" asp-controller="Solutions" asp-action="Solution1">Омут возрождения</a>
         <div class="canvaslog">            
-            <div>
-                <textarea class="formsol" id="flex2" rows="14" readonly></textarea>
+            <div class="formsol" id="flex2">
+                @foreach (ChatModel chat in ViewBag.Chat)
+                {
+                    <div class="chatmessage"><span class="chatname">@chat.UserName:</span> @chat.Message</div>
+                }
             </div>
             <div>
-                <input class="textsol" type="text" id="flex1">
-                <button type="submit" style="margin-left: 58%;" class="btn btn-warning">Отправить</button>
+                <input class="textsol" type="text" asp-for="Name" id="flex1">
+                <button type="submit" style="float:right;" class="btn btn-warning">Отправить</button>
             </div>            
         </div>
         <div class="canvasppl">
@@ -19,7 +22,7 @@
             @foreach (UserModel country in ViewBag.Users)
             {
                 <ul>
-                    <li class="border-bottom">@country.Name <input type="checkbox" id="@country.Id" class="form-check" title="Пол: @country.Sex; Раса: @country.Race;"></li>
+                    <li>@country.Name <span class="classicon" id="@country.Id" disabled="disabled" title="Пол: @country.Sex; Раса: @country.Race;">&#936;</span></li>
                 </ul>
             }
     </div>

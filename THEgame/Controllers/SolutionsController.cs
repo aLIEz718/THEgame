@@ -61,6 +61,11 @@ namespace THEgame.Controllers
                 ViewBag.Users = query.ToList();
                 ViewData["UserLocation"] = "Solution" + user.CurLocationId;
 
+                var chatquery = (from c in db.Chat
+                             where c.LocId == user.CurLocationId
+                             select c);
+                ViewBag.Chat = chatquery.ToList();
+
                 ViewData["Title"] = model.Name;
                 model.Name = "";
                 return View(model);
@@ -88,13 +93,18 @@ namespace THEgame.Controllers
                 ViewBag.Users = query.ToList();
                 ViewData["UserLocation"] = "Solution" + user.CurLocationId;
 
-
+                var chatquery = (from c in db.Chat
+                                 where c.LocId == user.CurLocationId
+                                 select c);
+                ViewBag.Chat = chatquery.ToList();
+                
                 ViewData["Title"] = model.Name;
+                model.Name = "";
                 return View(model);
             }
             ViewData["Title"] = model.Name;
             ViewData["UserLocation"] = "Solution" + user.CurLocationId;
-            
+            model.Name = "";
             return View(model);
         }
         [HttpPost]
@@ -105,20 +115,13 @@ namespace THEgame.Controllers
             if (user != null)
             {
                 var message = model.Name;
-                db.Chat.Add(new ChatModel() { LocId = user.CurLocationId, Message = message.ToString(), CreatorId = user.Id, CreateDate = DateTime.Now});
+                db.Chat.Add(new ChatModel() { LocId = user.CurLocationId, Message = message.ToString(), CreatorId = user.Id, CreateDate = DateTime.Now, UserName = user.Name});
                 await db.SaveChangesAsync();
-                return RedirectToAction("Solution"+user.CurLocationId, "Solutions");
+
+                
+                return RedirectToAction("Solution"+user.CurLocationId, "Solutions", model);
             }
-            return RedirectToAction("Solution"+user.CurLocationId, "Solutions");
-        }
-        [HttpGet]
-        public ActionResult GetMessage(int LocationId)
-        {
-            var query = (from c in db.Chat
-                         where c.LocId == LocationId
-                         select c);
-            ViewBag.Chat = query.ToList();
-            return PartialView();
+            return RedirectToAction("Solution"+user.CurLocationId, "Solutions", model);
         }
     }
 }

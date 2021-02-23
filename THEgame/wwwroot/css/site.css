@@ -190,7 +190,7 @@ body {
     display: block;
     min-width: 22.25%;
     max-height: 65px;
-    font-size: 25px;
+    font-size: 20px;
     padding: 10px;
     text-align: center;
     border-radius: 5px;
@@ -249,6 +249,7 @@ body {
     border: 1px solid #ced4da;
     border-radius: .25rem;
     min-width: 99%;
+    min-height: 400px;
     margin-left: 0.5%;
 }
 .textsol {
@@ -264,8 +265,14 @@ body {
     border: 1px solid #ced4da;
     border-radius: .25rem;
     min-width: 99%;
+    max-width: 99%;
     margin-left: 0.5%;
 }
 .classicon {
     cursor: pointer;
+}
+.chatmessage {
+}
+.chatname {
+    color: red;
 }
