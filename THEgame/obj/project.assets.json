@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "AjaxControlToolkit/20.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/AjaxControlToolkit.dll": {}
+        },
+        "runtime": {
+          "lib/net40/AjaxControlToolkit.dll": {}
+        }
+      },
       "bootstrap.sass/4.6.0": {
         "type": "package",
         "dependencies": {
@@ -523,6 +532,9 @@
           "buildTransitive/netcoreapp3.0/EntityFramework.targets": {}
         }
       },
+      "HelperMethods.HTMLHelper/1.0.1": {
+        "type": "package"
+      },
       "jQuery/3.0.0": {
         "type": "package"
       },
@@ -855,6 +867,12 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll": {}
+        }
+      },
+      "Microsoft.jQuery.Unobtrusive.Ajax/3.2.6": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "1.8.0"
         }
       },
       "Microsoft.NETCore.Platforms/3.1.0": {
@@ -2081,6 +2099,20 @@
     }
   },
   "libraries": {
+    "AjaxControlToolkit/20.1.0": {
+      "sha512": "pW4bkn7IKznIDLS61WOdicrbIR8Njpc0omO71w+xGd+iRjz+41vf+s7PVFpFZ2CfqpdlQIJnObZb67XwarNNxg==",
+      "type": "package",
+      "path": "ajaxcontroltoolkit/20.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Web.config.transform",
+        "ajaxcontroltoolkit.20.1.0.nupkg.sha512",
+        "ajaxcontroltoolkit.nuspec",
+        "lib/net40/AjaxControlToolkit.dll",
+        "readme.txt"
+      ]
+    },
     "bootstrap.sass/4.6.0": {
       "sha512": "Q50MhOBgWRKTAtFIb7Y4fUNqSjCtwFZyTvPAaihKEbAPtXO1Pbymub+7r0dU54UlzMewznfV9Elfsuv0vhs8Sw==",
       "type": "package",
@@ -2345,6 +2377,18 @@
         "tools/netcoreapp3.0/any/ef6.dll",
         "tools/netcoreapp3.0/any/ef6.pdb",
         "tools/netcoreapp3.0/any/ef6.runtimeconfig.json"
+      ]
+    },
+    "HelperMethods.HTMLHelper/1.0.1": {
+      "sha512": "78PPs1VMbHEwbMBP7eNkMeKdgEUg1bJGxZtW41whuvlIgT39uGUKxYLiKZxPC/RiK8ab/mkdduNgT8G5Mj9mLw==",
+      "type": "package",
+      "path": "helpermethods.htmlhelper/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/Bootstrap Html Helpers/HelperMethods.cs",
+        "helpermethods.htmlhelper.1.0.1.nupkg.sha512",
+        "helpermethods.htmlhelper.nuspec"
       ]
     },
     "jQuery/3.0.0": {
@@ -2923,6 +2967,19 @@
         "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.xml",
         "microsoft.identitymodel.tokens.5.6.0.nupkg.sha512",
         "microsoft.identitymodel.tokens.nuspec"
+      ]
+    },
+    "Microsoft.jQuery.Unobtrusive.Ajax/3.2.6": {
+      "sha512": "udg7ZBszgqxloQ+ShJRONKQAzPnJIlUhKZB+AIvZdKh7CDc5Nms69T9X0hN5i+NqMmQE6njkzdCcEb16lPdJTw==",
+      "type": "package",
+      "path": "microsoft.jquery.unobtrusive.ajax/3.2.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Scripts/jquery.unobtrusive-ajax.js",
+        "Content/Scripts/jquery.unobtrusive-ajax.min.js",
+        "microsoft.jquery.unobtrusive.ajax.3.2.6.nupkg.sha512",
+        "microsoft.jquery.unobtrusive.ajax.nuspec"
       ]
     },
     "Microsoft.NETCore.Platforms/3.1.0": {
@@ -6857,10 +6914,13 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "AjaxControlToolkit >= 20.1.0",
       "EntityFramework >= 6.4.4",
+      "HelperMethods.HTMLHelper >= 1.0.1",
       "Microsoft.EntityFrameworkCore >= 5.0.3",
       "Microsoft.EntityFrameworkCore.Analyzers >= 5.0.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.3",
+      "Microsoft.jQuery.Unobtrusive.Ajax >= 3.2.6",
       "System.IO >= 4.3.0",
       "System.Linq.Expressions >= 4.3.0",
       "System.Net.Primitives >= 4.3.1",
@@ -6904,9 +6964,17 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "AjaxControlToolkit": {
+            "target": "Package",
+            "version": "[20.1.0, )"
+          },
           "EntityFramework": {
             "target": "Package",
             "version": "[6.4.4, )"
+          },
+          "HelperMethods.HTMLHelper": {
+            "target": "Package",
+            "version": "[1.0.1, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
@@ -6919,6 +6987,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[5.0.3, )"
+          },
+          "Microsoft.jQuery.Unobtrusive.Ajax": {
+            "target": "Package",
+            "version": "[3.2.6, )"
           },
           "System.IO": {
             "target": "Package",
@@ -6958,5 +7030,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.112\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"AjaxControlToolkit 20.1.0\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\", а не целевой платформы проекта \".NETCoreApp,Version=v3.1\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "AjaxControlToolkit",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

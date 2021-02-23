@@ -1,11 +1,19 @@
 ﻿@using THEgame.Models.Solutions
 @model Solution1Model
 <h4 class="titlesol">@ViewData["Title"]</h4>
-<div class="locationcanvas">
+<form class="locationcanvas">
     <img class="canvasimg" src="~/YWMcR_3X0WI.jpg" />
     <div class="canvasright">
         <a class="btn btn-light canvasbuttons" asp-area="" asp-controller="Solutions" asp-action="Solution1">Омут возрождения</a>
-        <div class="canvaslog"></div>
+        <div class="canvaslog">            
+            <div>
+                <textarea class="formsol" id="flex2" rows="14" readonly></textarea>
+            </div>
+            <div>
+                <input class="textsol" type="text" id="flex1">
+                <button type="submit" style="margin-left: 58%;" class="btn btn-warning">Отправить</button>
+            </div>            
+        </div>
         <div class="canvasppl">
             <span class="border-bottom">Игроки в этой локации</span>
             @foreach (UserModel country in ViewBag.Users)
@@ -16,7 +24,7 @@
             }
     </div>
 </div>
-</div>
+</form>
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function () {
         for (let i = 1; i <= 4; i++) {

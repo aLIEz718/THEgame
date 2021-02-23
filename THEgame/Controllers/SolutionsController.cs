@@ -17,7 +17,6 @@ namespace THEgame.Controllers
     [Authorize]
     public class SolutionsController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         #region Dependency
         public IDBase dBase { get; set; }
         public ISolutionDL soler { get; set; }
@@ -27,11 +26,11 @@ namespace THEgame.Controllers
         {
             db = context;
         }
-        
+
         public async Task<IActionResult> Solution0Async(Solution0Model model)
         {
-            model.Imodel =  new IndexModel();
-            model.Imodel.modelA = new SolutionAModel();            
+            model.Imodel = new IndexModel();
+            model.Imodel.modelA = new SolutionAModel();
 
             soler = new SolutionDL();
             Dbase dba = soler.GetDBase();
@@ -49,7 +48,7 @@ namespace THEgame.Controllers
         {
             var cookieid = Int32.Parse(HttpContext.Request.Cookies.FirstOrDefault(x => x.Key == "UserId").Value);
             UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Id == cookieid);
-            
+
             Solution1Model model = await db.Locations.FirstOrDefaultAsync(l => l.Id == 1);
             if (user != null)
             {
@@ -63,10 +62,12 @@ namespace THEgame.Controllers
                 ViewData["UserLocation"] = "Solution" + user.CurLocationId;
 
                 ViewData["Title"] = model.Name;
+                model.Name = "";
                 return View(model);
             }
             ViewData["UserLocation"] = "Solution" + user.CurLocationId;
-            ViewData["Title"] = model.Name;            
+            ViewData["Title"] = model.Name;
+            model.Name = "";
             return View(model);
         }
         [HttpGet]
@@ -93,7 +94,31 @@ namespace THEgame.Controllers
             }
             ViewData["Title"] = model.Name;
             ViewData["UserLocation"] = "Solution" + user.CurLocationId;
+            
             return View(model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> SendMessage(Solution1Model model)
+        {
+            var cookieid = Int32.Parse(HttpContext.Request.Cookies.FirstOrDefault(x => x.Key == "UserId").Value);
+            UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Id == cookieid);
+            if (user != null)
+            {
+                var message = model.Name;
+                db.Chat.Add(new ChatModel() { LocId = user.CurLocationId, Message = message.ToString(), CreatorId = user.Id, CreateDate = DateTime.Now});
+                await db.SaveChangesAsync();
+                return RedirectToAction("Solution"+user.CurLocationId, "Solutions");
+            }
+            return RedirectToAction("Solution"+user.CurLocationId, "Solutions");
+        }
+        [HttpGet]
+        public ActionResult GetMessage(int LocationId)
+        {
+            var query = (from c in db.Chat
+                         where c.LocId == LocationId
+                         select c);
+            ViewBag.Chat = query.ToList();
+            return PartialView();
         }
     }
 }

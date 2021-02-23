@@ -126,7 +126,9 @@ C:\THEgame\THEgame\THEgame\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreap
 C:\THEgame\THEgame\THEgame\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\THEgame\THEgame\THEgame\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\THEgame\THEgame\THEgame\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.MvcApplicationPartsAssemblyInfo.cache
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Home\IndexIt.cshtml.g.cs
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Solutions\Solution1.cshtml.g.cs
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Solutions\Solution2.cshtml.g.cs
+C:\THEgame\THEgame\THEgame\bin\Release\netcoreapp3.1\AjaxControlToolkit.dll
+C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.MvcApplicationPartsAssemblyInfo.cache
+C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Solutions\GetMessage.cshtml.g.cs

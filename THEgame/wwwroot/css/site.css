@@ -32,7 +32,7 @@ a {
 .containerbody {
     z-index: 1;
     min-height: 600px;
-    margin: 0 16%;
+    margin: 0 20%;
 }
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -176,13 +176,14 @@ body {
     padding: 5px;
 }
 .locationcanvas {
-    display: flex;    
+    display: flex;
     min-height: 800px;
+    font-family: "Lucida Console", "Courier New", monospace;
 }
 .canvasimg {
     max-width: 77.75%;
     max-height: 50%;
-    border: 10px groove brown;
+    border: 5px groove brown;
 }
 .canvasbuttons {
     text-decoration: none;
@@ -196,15 +197,15 @@ body {
     text-shadow: black 0 0 1px;
 }
 .canvaslog {
-    min-height: 30%;
+    min-height: 55%;
+    border: 5px groove brown;
 }
-.canvasppl {
-    font-family: "Lucida Console", "Courier New", monospace;
+.canvasppl {    
     font-size: 15px;
     font-weight: bold;
     text-shadow: white 0 0 2px;
     min-height: 30%;
-    border: 10px groove brown;
+    border: 5px groove brown;
 }
     .canvasppl ul {
         padding-left: 15%;
@@ -234,4 +235,37 @@ body {
     border-radius: 10px;
     padding: 5px;
     box-shadow: 0px 1px 1px black;
+}
+.formsol {
+    resize: none;
+    display: block;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    min-width: 99%;
+    margin-left: 0.5%;
+}
+.textsol {
+    resize: none;
+    display: block;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    min-width: 99%;
+    margin-left: 0.5%;
+}
+.classicon {
+    cursor: pointer;
 }
