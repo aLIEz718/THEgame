@@ -2,6 +2,11 @@
 @{
     ViewData["Title"] = "weedSoldiers";
 }
+<style>
+    .blockquote {
+        font-size: 17px;
+    }
+</style>
 <blockquote class="blockquote text-justify">
     <p class="mb-1">
         <div style="margin-left: 2.85%; font-weight: bold;">Ты! Да, именно ты, кто читает эту надпись, запомни:</div>
@@ -72,6 +77,12 @@
         @Html.Partial("IndexIt")
     }
     @Html.Partial("IndexRight")
+<div class="perksindex">
+    <div>
+        <h4 class="display-4">Навыки</h4>
+        <div class="border-top gender"></div>
+    </div>
+</div>
 </div>
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function () {        
