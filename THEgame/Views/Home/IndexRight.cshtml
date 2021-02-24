@@ -1,8 +1,15 @@
 ﻿@model IndexModel
 <style>
-    input[type="email"] {
-        width: 30px;
-        height: 30px;
+    input[type="text"] {
+        width: 50px;
+        float: right;
+    }
+    .btn-group {
+        float: right;
+        max-height: 33px;
+    }
+    .col-auto {
+        margin-bottom: 15px;
     }
 </style>
 <form asp-action="Index" asp-controller="Home" asp-anti-forgery="true" class="indexright">
@@ -13,57 +20,75 @@
         </div> 
         <div class="col-auto">
             Слава
-            <input type="text" class="form-control-sm" style="width: 50px;font-size: 15px;margin-left: 8.5%;" asp-for="Glory" readonly/>
-            <button type="button" class="btn btn-success" id="incglory">+</button>
-            <button type="button" class="btn btn-success" id="decglory">-</button>
+            <input type="text" class="form-control-sm" asp-for="Glory" readonly/>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <input type="button" class="btn btn-success" id="incglory" value="+">
+            <input type="button" class="btn btn-danger" id="decglory" value="-">
+            </div>
         </div>        
         <div class="col-auto">
             Могущество
-            <input type="text" class="form-control-sm" style="width: 50px; font-size: 15px;" asp-for="Power"  />
-            <button type="button" class="btn btn-success" id="incpower">+</button>
-            <button type="button" class="btn btn-success" id="decpower">-</button>
+            <input type="text" class="form-control-sm" asp-for="Power"  />
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <input type="button" class="btn btn-success" id="incpower" value="+">
+            <input type="button" class="btn btn-danger" id="decpower" value="-">
+            </div>
         </div>
         <div class="col-auto">
             Знание
-            <input type="text" class="form-control-sm" style="width: 50px; font-size: 15px;" asp-for="Knowledge" />
-            <button type="button" class="btn btn-success" id="incKnowledge">+</button>
-            <button type="button" class="btn btn-success" id="decKnowledge">-</button>
+            <input type="text" class="form-control-sm" asp-for="Knowledge" />
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <input type="button" class="btn btn-success" id="incKnowledge" value="+">
+            <input type="button" class="btn btn-danger" id="decKnowledge" value="-">
+            </div>
         </div>
         <div class="col-auto">
             Разрушение
-            <input type="text" class="form-control-sm" style="width: 50px; font-size: 15px;" asp-for="Destruction" />
-            <button type="button" class="btn btn-success" id="incDestruction">+</button>
-            <button type="button" class="btn btn-success" id="decDestruction">-</button>
+            <input type="text" class="form-control-sm" asp-for="Destruction" />
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <input type="button" class="btn btn-success" id="incDestruction" value="+">
+            <input type="button" class="btn btn-danger" id="decDestruction" value="-">
+            </div>
         </div>
         <div class="col-auto">
             Гуманизм
-            <input type="text" class="form-control-sm" style="width: 50px; font-size: 15px;" asp-for="Humanism" />
-            <button type="button" class="btn btn-success" id="incHumanism">+</button>
-            <button type="button" class="btn btn-success" id="decHumanism">-</button>
+            <input type="text" class="form-control-sm" asp-for="Humanism" />
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <input type="button" class="btn btn-success" id="incHumanism" value="+">
+            <input type="button" class="btn btn-danger" id="decHumanism" value="-">
+            </div>
         </div>
         <div class="col-auto">
             Власть
-            <input type="text" class="form-control-sm" style="width: 50px; font-size: 15px;" asp-for="Authority" />
-            <button type="button" class="btn btn-success" id="incAuthority">+</button>
-            <button type="button" class="btn btn-success" id="decAuthority">-</button>
+            <input type="text" class="form-control-sm" asp-for="Authority" />
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <input type="button" class="btn btn-success" id="incAuthority" value="+">
+            <input type="button" class="btn btn-danger" id="decAuthority" value="-">
+            </div>
         </div>
         <div class="col-auto">
             Богатство
-            <input type="text" class="form-control-sm" style="width: 50px; font-size: 15px;" asp-for="Rich" />
-            <button type="button" class="btn btn-success" id="incRich">+</button>
-            <button type="button" class="btn btn-success" id="decRich">-</button>
+            <input type="text" class="form-control-sm" asp-for="Rich" />
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <input type="button" class="btn btn-success" id="incRich" value="+">
+            <input type="button" class="btn btn-danger" id="decRich" value="-">
+            </div>
         </div>
         <div class="col-auto">
             Ремесло
-            <input type="text" class="form-control-sm" style="width: 50px; font-size: 15px;" asp-for="Craft" />
-            <button type="button" class="btn btn-success" id="incCraft">+</button>
-            <button type="button" class="btn btn-success" id="decCraft">-</button>
+            <input type="text" class="form-control-sm" asp-for="Craft" />
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <input type="button" class="btn btn-success" id="incCraft" value="+">
+            <input type="button" class="btn btn-danger" id="decCraft" value="-">
+            </div>
         </div>
         <div class="col-auto">
             Дитя природы
-            <input type="text" class="form-control-sm" style="width: 50px; font-size: 15px;" asp-for="ChildOfNature" />
-            <button type="button" class="btn btn-success" id="incChildOfNature">+</button>
-            <button type="button" class="btn btn-success" id="decChildOfNature">-</button>
+            <input type="text" class="form-control-sm" asp-for="ChildOfNature" />
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <input type="button" class="btn btn-success" id="incChildOfNature" value="+">
+            <input type="button" class="btn btn-danger" id="decChildOfNature" value="-">
+            </div>
         </div>
         <button type="submit" class="btn btn-danger">Записать</button>
 </form>

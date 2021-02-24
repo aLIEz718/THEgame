@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,5 +16,6 @@ namespace THEgame.Models
         public string RaceDis { get; set; }
         public int CurLocationId { get; set; }
         public int CharLevel { get; set; }
+        public string Speach { get; set; }
     }
 }

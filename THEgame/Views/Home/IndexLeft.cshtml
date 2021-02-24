@@ -48,24 +48,5 @@
             <textarea class="form-control" id="flex2" rows="3" asp-for="RaceDis"></textarea>
         </div>
         <button type="submit" class="btn btn-info">Сохранить</button>
-    </div>
-    
+    </div>    
 </form>
-<script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function () {        
-        if (!$("#Sex").val() == "") {
-            $("#flexRadioDefault1").prop("disabled", true);
-            $("#flexRadioDefault2").prop("disabled", true);
-            $("#flexRadioDefault3").prop("disabled", true );
-        }
-        if (!$("#Race").val() == "") {
-            $("#flex1").prop("disabled", true);
-        }
-        if (!$("#RaceDis").val() == "") {
-            $("#flex2").prop("disabled", true);
-        }
-        if (!$("#Race").val() == "" && !$("#RaceDis").val() == "" && !$("#Sex").val() == "") {
-            $("#btn").prop("disabled", true);
-        }
-    });
-</script>

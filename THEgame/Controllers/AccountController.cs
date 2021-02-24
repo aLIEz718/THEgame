@@ -34,8 +34,6 @@ namespace THEgame.Controllers
                 {
                     await Authenticate(model.Name); // аутентификация
 
-                    HttpContext.Response.Cookies.Append("UserId", user.Id.ToString());
-
                     return RedirectToAction("Index", "Home");
                 }
                 ModelState.AddModelError("", "Некорректные логин и(или) пароль");
@@ -86,7 +84,6 @@ namespace THEgame.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            HttpContext.Response.Cookies.Delete("UserId");
             return RedirectToAction("Login", "Account");
         }
     }

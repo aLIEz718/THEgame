@@ -132,3 +132,5 @@ C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Solutions\Solut
 C:\THEgame\THEgame\THEgame\bin\Release\netcoreapp3.1\AjaxControlToolkit.dll
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.MvcApplicationPartsAssemblyInfo.cache
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Solutions\Solution3.cshtml.g.cs
+C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Solutions\Solution4.cshtml.g.cs
+C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Solutions\Solution5.cshtml.g.cs

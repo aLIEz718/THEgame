@@ -11,6 +11,8 @@ using THEgame.Models.Solutions;
 using THEgame.DeepLogic.Solutions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Identity;
 
 namespace THEgame.Controllers
 {
@@ -26,7 +28,6 @@ namespace THEgame.Controllers
         {
             db = context;
         }
-
         public async Task<IActionResult> Solution0Async(Solution0Model model)
         {
             model.Imodel = new IndexModel();
@@ -38,14 +39,12 @@ namespace THEgame.Controllers
 
             model.RandNumber = soler.GetInt(0, 100);
 
-            var cookieid = Int32.Parse(HttpContext.Request.Cookies.FirstOrDefault(x => x.Key == "UserId").Value);
-            UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Id == cookieid);
+            UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Name == User.Identity.Name);
             ViewData["UserLocation"] = "Solution" + user.CurLocationId;
             return View(model);
         }
         public async Task<ViewResult> LocationDbChangesAsync(int number) {
-            var cookieid = Int32.Parse(HttpContext.Request.Cookies.FirstOrDefault(x => x.Key == "UserId").Value);
-            UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Id == cookieid);
+            UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Name == User.Identity.Name);
 
             Solution1Model model = await db.Locations.FirstOrDefaultAsync(l => l.Id == number);
             if (user != null)
@@ -92,11 +91,22 @@ namespace THEgame.Controllers
             await LocationDbChangesAsync(3);
             return View();
         }
+        [HttpGet]
+        public async Task<IActionResult> Solution4Async()
+        {
+            await LocationDbChangesAsync(4);
+            return View();
+        }
+        [HttpGet]
+        public async Task<IActionResult> Solution5Async()
+        {
+            await LocationDbChangesAsync(5);
+            return View();
+        }
         [HttpPost]
         public async Task<IActionResult> SendMessage(Solution1Model model)
         {
-            var cookieid = Int32.Parse(HttpContext.Request.Cookies.FirstOrDefault(x => x.Key == "UserId").Value);
-            UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Id == cookieid);
+            UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Name == User.Identity.Name);
             if (user != null)
             {
                 var message = model.Name;

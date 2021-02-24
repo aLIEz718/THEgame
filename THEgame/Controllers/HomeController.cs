@@ -27,11 +27,10 @@ namespace THEgame.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var cookieid = Int32.Parse(HttpContext.Request.Cookies.FirstOrDefault(x => x.Key == "UserId").Value);
-            UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Id == cookieid );
+            UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Name == User.Identity.Name);
             ViewData["UserLocation"] = "Solution" + user.CurLocationId;
             var entitychar = db.Character.Where(u => u.UserId == user.Id).FirstOrDefault();
-            IndexModel model = new IndexModel() { Id = user.Id, Sex = user.Sex, Race = user.Race, RaceDis = user.RaceDis, TotalPoints = 8 + user.CharLevel };
+            IndexModel model = new IndexModel() { Id = user.Id, Sex = user.Sex, Race = user.Race, RaceDis = user.RaceDis, TotalPoints = 8 + user.CharLevel, Speach = user.Speach };
             if(entitychar != null)
             {
                 model.Glory = entitychar.Glory;
@@ -51,23 +50,31 @@ namespace THEgame.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Index(IndexModel model)
         {
-            model.Id = Int32.Parse(HttpContext.Request.Cookies.FirstOrDefault(x => x.Key == "UserId").Value);
             if (ModelState.IsValid)
             {
-                UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Id == model.Id);
-                if (user == null)
+                UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Name == User.Identity.Name);
+                ViewData["UserLocation"] = "Solution" + user.CurLocationId;
+                if (user != null)
                 {
                     var entityuser = db.Users.Where(u => u.Id == user.Id).FirstOrDefault();
+                    entityuser.Sex = entityuser.Sex == null ? model.Sex : entityuser.Sex;
+                    entityuser.Race = entityuser.Race == null ? model.Race : entityuser.Race;
+                    entityuser.RaceDis = entityuser.RaceDis == null ? model.RaceDis : entityuser.RaceDis;
+                    entityuser.Speach = entityuser.Speach == null ? model.Speach : entityuser.Speach;
+                    await db.SaveChangesAsync();
+                }
+                if (user == null)
+                {
+                    var entityuser = new UserModel();
                     entityuser.Sex = model.Sex;
                     entityuser.Race = model.Race;
                     entityuser.RaceDis = model.RaceDis;
+                    entityuser.Speach = model.Speach;
                     await db.SaveChangesAsync();
-
-                    return RedirectToAction("Index", "Home");
                 }
-                CharacterModel charatcer = await db.Character.FirstOrDefaultAsync(u => u.UserId == model.Id);
-                if (charatcer == null) {
-                    var entitychar = new CharacterModel();
+                CharacterModel entitychar = await db.Character.Where(u => u.UserId == user.Id).FirstOrDefaultAsync();
+                if (entitychar == null) {
+                    entitychar = new CharacterModel();
                     entitychar.Glory = model.Glory;
                     entitychar.Power = model.Power;
                     entitychar.Knowledge = model.Knowledge;
@@ -78,14 +85,13 @@ namespace THEgame.Controllers
                     entitychar.Craft = model.Craft;
                     entitychar.Humanism = model.Humanism;
                     entitychar.TotalPoints = model.TotalPoints;
+                    entitychar.UserId = user.Id;
                     db.Character.Add(entitychar);
                     await db.SaveChangesAsync();
-
-                    return RedirectToAction("Index", "Home");
+                    model.TotalPoints = 8 + user.CharLevel;
                 }
-                if (charatcer != null)
+                if (entitychar != null)
                 {
-                    var entitychar = db.Character.Where(u => u.UserId == user.Id).FirstOrDefault();
                     entitychar.Glory = model.Glory;
                     entitychar.Power = model.Power;
                     entitychar.Knowledge = model.Knowledge;
@@ -96,14 +102,14 @@ namespace THEgame.Controllers
                     entitychar.Craft = model.Craft;
                     entitychar.Humanism = model.Humanism;
                     entitychar.TotalPoints = model.TotalPoints;
+                    entitychar.UserId = user.Id;
                     await db.SaveChangesAsync();
-
-                    return RedirectToAction("Index", "Home");
-                }
-                model.TotalPoints = 8 + user.CharLevel;
+                    model.TotalPoints = entitychar.TotalPoints;
+                }                    
                     model.Sex = user.Sex;
                     model.Race = user.Race;
                     model.RaceDis = user.RaceDis;
+                    model.Speach = user.Speach;
                     return View(model);
             }
             return View(model);
@@ -119,16 +125,14 @@ namespace THEgame.Controllers
         
         public async Task<IActionResult> RulesAsync()
         {
-            var cookieid = Int32.Parse(HttpContext.Request.Cookies.FirstOrDefault(x => x.Key == "UserId").Value);
-            UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Id == cookieid);
+            UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Name == User.Identity.Name);
             ViewData["UserLocation"] = "Solution" + user.CurLocationId;
             return View();
         }
         
         public async Task<IActionResult> AdminAsync(AdminModel model)
         {
-            var cookieid = Int32.Parse(HttpContext.Request.Cookies.FirstOrDefault(x => x.Key == "UserId").Value);
-            UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Id == cookieid);
+            UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Name == User.Identity.Name);
             ViewData["UserLocation"] = "Solution" + user.CurLocationId;
             return View(model);
         }
