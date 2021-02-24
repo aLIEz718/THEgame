@@ -23,13 +23,14 @@
 @Html.HiddenFor(m => m.Sex)
 @Html.HiddenFor(m => m.Race)
 @Html.HiddenFor(m => m.RaceDis)
+@Html.HiddenFor(m => m.Speach)
 <div class="solflex">
     @if (Model.Sex.Equals("Мужской"))
     {
         @Html.Partial("IndexLeft")}
     else if (Model.Sex.Equals("Женский"))
     {
-        <form asp-action="Index" asp-controller="Home" asp-anti-forgery="true" class="codetext">
+        <form asp-action="IndexUser" asp-controller="Home" asp-anti-forgery="true" class="codetext">
             <div class="validation" asp-validation-summary="ModelOnly"></div>
             <img src="https://i.pinimg.com/originals/9a/a2/6a/9aa26a185905ed03cf9f10c435e7d95e.jpg" class="linkimg" />
             <div>

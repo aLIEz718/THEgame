@@ -54,24 +54,6 @@ namespace THEgame.Controllers
             {
                 UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Name == User.Identity.Name);
                 ViewData["UserLocation"] = "Solution" + user.CurLocationId;
-                if (user != null)
-                {
-                    var entityuser = db.Users.Where(u => u.Id == user.Id).FirstOrDefault();
-                    entityuser.Sex = entityuser.Sex == null ? model.Sex : entityuser.Sex;
-                    entityuser.Race = entityuser.Race == null ? model.Race : entityuser.Race;
-                    entityuser.RaceDis = entityuser.RaceDis == null ? model.RaceDis : entityuser.RaceDis;
-                    entityuser.Speach = entityuser.Speach == null ? model.Speach : entityuser.Speach;
-                    await db.SaveChangesAsync();
-                }
-                if (user == null)
-                {
-                    var entityuser = new UserModel();
-                    entityuser.Sex = model.Sex;
-                    entityuser.Race = model.Race;
-                    entityuser.RaceDis = model.RaceDis;
-                    entityuser.Speach = model.Speach;
-                    await db.SaveChangesAsync();
-                }
                 CharacterModel entitychar = await db.Character.Where(u => u.UserId == user.Id).FirstOrDefaultAsync();
                 if (entitychar == null) {
                     entitychar = new CharacterModel();
@@ -84,11 +66,10 @@ namespace THEgame.Controllers
                     entitychar.ChildOfNature = model.ChildOfNature;
                     entitychar.Craft = model.Craft;
                     entitychar.Humanism = model.Humanism;
-                    entitychar.TotalPoints = model.TotalPoints;
+                    entitychar.TotalPoints = 8 + user.CharLevel;
                     entitychar.UserId = user.Id;
                     db.Character.Add(entitychar);
                     await db.SaveChangesAsync();
-                    model.TotalPoints = 8 + user.CharLevel;
                 }
                 if (entitychar != null)
                 {
@@ -113,6 +94,36 @@ namespace THEgame.Controllers
                     return View(model);
             }
             return View(model);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> IndexUser(IndexModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Name == User.Identity.Name);
+                ViewData["UserLocation"] = "Solution" + user.CurLocationId;
+                if (user != null)
+                {
+                    var entityuser = db.Users.Where(u => u.Id == user.Id).FirstOrDefault();
+                    entityuser.Sex = entityuser.Sex == null ? model.Sex : entityuser.Sex;
+                    entityuser.Race = entityuser.Race == null ? model.Race : entityuser.Race;
+                    entityuser.RaceDis = entityuser.RaceDis == null ? model.RaceDis : entityuser.RaceDis;
+                    entityuser.Speach = entityuser.Speach == null ? model.Speach : entityuser.Speach;
+                    await db.SaveChangesAsync();
+                }
+                if (user == null)
+                {
+                    var entityuser = new UserModel();
+                    entityuser.Sex = model.Sex;
+                    entityuser.Race = model.Race;
+                    entityuser.RaceDis = model.RaceDis;
+                    entityuser.Speach = model.Speach;
+                    await db.SaveChangesAsync();
+                }
+                return RedirectToAction("Index", "Home");
+            }
+            return RedirectToAction("Index", "Home");
         }
         public IActionResult IndexLeft(SolutionVModel model)
         {

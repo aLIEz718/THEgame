@@ -9,7 +9,8 @@
 @Html.HiddenFor(m => m.Sex)
 @Html.HiddenFor(m => m.Race)
 @Html.HiddenFor(m => m.RaceDis)
-<form asp-action="Index" asp-controller="Home" asp-anti-forgery="true" class="codetext">
+@Html.HiddenFor(m => m.Speach)
+<form asp-action="IndexUser" asp-controller="Home" asp-anti-forgery="true" class="codetext">
     <img src="~/5890d8e9b2cb5b18709ca623.png" class="linkimg" />
     <div>
         <h4 class="display-4">Основные параметры</h4>
