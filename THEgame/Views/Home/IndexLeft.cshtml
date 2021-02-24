@@ -6,8 +6,9 @@
             <label class="form-check-label" for="flexSwitchCheckDefault">Хардкор</label>
         </div>*@
 }
-
-
+@Html.HiddenFor(m => m.Sex)
+@Html.HiddenFor(m => m.Race)
+@Html.HiddenFor(m => m.RaceDis)
 <form asp-action="Index" asp-controller="Home" asp-anti-forgery="true" class="codetext">
     <img src="~/5890d8e9b2cb5b18709ca623.png" class="linkimg" />
     <div>
@@ -50,3 +51,21 @@
     </div>
     
 </form>
+<script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {        
+        if (!$("#Sex").val() == "") {
+            $("#flexRadioDefault1").prop("disabled", true);
+            $("#flexRadioDefault2").prop("disabled", true);
+            $("#flexRadioDefault3").prop("disabled", true );
+        }
+        if (!$("#Race").val() == "") {
+            $("#flex1").prop("disabled", true);
+        }
+        if (!$("#RaceDis").val() == "") {
+            $("#flex2").prop("disabled", true);
+        }
+        if (!$("#Race").val() == "" && !$("#RaceDis").val() == "" && !$("#Sex").val() == "") {
+            $("#btn").prop("disabled", true);
+        }
+    });
+</script>

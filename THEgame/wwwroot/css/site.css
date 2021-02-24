@@ -32,7 +32,7 @@ a {
 .containerbody {
     z-index: 1;
     min-height: 600px;
-    margin: 0 20%;
+    margin: 0 10%;
 }
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -143,7 +143,7 @@ body {
 .logoncontainer {
     margin: auto;
     text-align: left;
-    font-size: 20px;
+    font-size: 20px;    
 }
 .dashboard {
     display: flex;
@@ -178,11 +178,12 @@ body {
 .locationcanvas {
     display: flex;
     min-height: 800px;
-    font-family: "Lucida Console", "Courier New", monospace;
+    font-family: "Arial", sans-serif;
 }
 .canvasimg {
-    max-width: 77.75%;
-    max-height: 50%;
+    width: 77.75%;
+    max-height: 800px;
+    
     border: 5px groove brown;
 }
 .canvasbuttons {
@@ -196,25 +197,25 @@ body {
     border-radius: 5px;
     text-shadow: black 0 0 1px;
 }
-.canvaslog {
-    min-height: 55%;
-    border: 5px groove brown;
-}
-.canvasppl {    
+.canvasppl {
     font-size: 15px;
     font-weight: bold;
     text-shadow: white 0 0 2px;
-    min-height: 30%;
+    height: 28%;
     border: 5px groove brown;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
     .canvasppl ul {
-        padding-left: 15%;
+        padding-left: 5px;
     }
     .canvasppl li {
         padding: 0;
         list-style: none;
     }
-
+.canvasppllist li {
+    padding: 0;
+}
 .canvasright {
     min-width: 22.25%;
     display: flex;
@@ -236,28 +237,38 @@ body {
     padding: 5px;
     box-shadow: 0px 1px 1px black;
 }
+.canvaslog {
+    min-height: 55%;
+    height: 65%;
+    border: 5px groove brown;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
 .formsol {
     resize: none;
     display: block;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    font-weight: 400;
+    padding: .375rem 0;
+    font-size: 13px;
+    font-weight: bold;
     line-height: 1.5;
     color: #212529;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: .25rem;
-    min-width: 99%;
-    min-height: 400px;
+    min-width: 106%;
+    min-height: 100%;
+    max-height: 100%;
     margin-left: 0.5%;
+    overflow-y: scroll;
+    
 }
 .textsol {
     resize: none;
     display: block;
     padding: .375rem .75rem;
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: 13px;
+    font-weight: bold;
     line-height: 1.5;
     color: #212529;
     background-color: #fff;

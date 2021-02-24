@@ -43,7 +43,7 @@ namespace THEgame.Controllers
             if (ModelState.IsValid)
             {
                 UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Id == model.Id);
-                if (user != null)
+                if (user == null)
                 {
                     // добавляем пользователя в бд
                     var entityuser = db.Users.Where(u => u.Id == user.Id).FirstOrDefault();
@@ -55,7 +55,10 @@ namespace THEgame.Controllers
                     return RedirectToAction("Index", "Home");
                 }
                 else
-                    ModelState.AddModelError("", "Ошибка в данных");
+                    model.Sex = user.Sex;
+                    model.Race = user.Race;
+                    model.RaceDis = user.RaceDis;
+                    return View(model);
             }
             return View(model);
         }

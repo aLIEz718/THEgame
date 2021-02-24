@@ -2,14 +2,22 @@
 @{
     ViewData["Title"] = "weedSoldiers";
 }
-<blockquote class="blockquote text-center">
+<blockquote class="blockquote text-justify">
     <p class="mb-1">
-        Lamp Oil, Rope, Bombs You Want It It's Yours My Friend As Long As You Have Enough Rupies
+        <div style="margin-left: 2.85%; font-weight: bold;">Ты! Да, именно ты, кто читает эту надпись, запомни:</div>
+        <ul>
+<li>Ты тот - кто ты есть с рождения, а значит после нажатия кнопки "сохранить" уже не сможешь ничего поменять!</li>
+<li>Досконально продумай и настрой своего игрового персонажа! (Странно встречать "Камень женского пола 2ур. "немой" статус: пытается колдовать")</li>
+<li>Найдите себе цель в этом мире и "распределите" очки характеристик по своим предпочтениям.</li>
+<li>Закажите пиццу и наслаждайтесь игрой!</li>
+            </ul>
     </p>
     <br />
     <footer class="blockquote-footer" style="text-align:right;">Моршу <cite title="Source Title">тот самый</cite></footer>
 </blockquote>
-
+@Html.HiddenFor(m => m.Sex)
+@Html.HiddenFor(m => m.Race)
+@Html.HiddenFor(m => m.RaceDis)
 <div class="solflex">
     @if (Model.Sex.Equals("Мужской"))
     {
@@ -66,5 +74,20 @@
     @Html.Partial("IndexRight")
 </div>
 <script type="text/javascript">
-    
+        document.addEventListener('DOMContentLoaded', function () {        
+        if (!$("#Sex").val() == "") {
+            $("#flexRadioDefault1").prop("disabled", true);
+            $("#flexRadioDefault2").prop("disabled", true);
+            $("#flexRadioDefault3").prop("disabled", true );
+        }
+        if (!$("#Race").val() == "") {
+            $("#flex1").prop("disabled", true);
+        }
+        if (!$("#RaceDis").val() == "") {
+            $("#flex2").prop("disabled", true);
+        }
+        if (!$("#Race").val() == "" && !$("#RaceDis").val() == "" && !$("#Sex").val() == "") {
+            $("#btn").prop("disabled", true);
+        }
+    });
 </script>

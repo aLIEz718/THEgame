@@ -27,17 +27,23 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Admin">Настройки</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Solutions" asp-action="Solution0">Доска объявлений</a>
-                        </li>
+                        @if (ViewData["LocationType"] != null)
+                        {
+                            if (ViewData["LocationType"].ToString() == "Деревня")
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Solutions" asp-action="Solution0">Доска объявлений</a>
+                                </li>
+                            }
+                        }
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Solutions" asp-action="@(ViewData["UserLocation"])" id="location">В локацию</a>
-                        </li> 
-                    </ul>                    
+                        </li>
+                    </ul>
                 </div>
                 <div class="nav-item" style="text-align:right;">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Сменить пользователя</a>
-                    </div>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Сменить пользователя</a>
+                </div>
             </div>
         </nav>
     </header>

@@ -14,5 +14,6 @@ namespace THEgame.Models
         public string Race { get; set; }
         public string RaceDis { get; set; }
         public int CurLocationId { get; set; }
+        public int CharLevel { get; set; }
     }
 }

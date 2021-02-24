@@ -43,52 +43,18 @@ namespace THEgame.Controllers
             ViewData["UserLocation"] = "Solution" + user.CurLocationId;
             return View(model);
         }
-        [HttpGet]
-        public async Task<IActionResult> Solution1Async()
-        {
+        public async Task<ViewResult> LocationDbChangesAsync(int number) {
             var cookieid = Int32.Parse(HttpContext.Request.Cookies.FirstOrDefault(x => x.Key == "UserId").Value);
             UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Id == cookieid);
 
-            Solution1Model model = await db.Locations.FirstOrDefaultAsync(l => l.Id == 1);
+            Solution1Model model = await db.Locations.FirstOrDefaultAsync(l => l.Id == number);
             if (user != null)
             {
                 var entityuser = db.Users.Where(u => u.Id == user.Id).FirstOrDefault();
                 entityuser.CurLocationId = model.Id;
                 await db.SaveChangesAsync();
                 var query = (from c in db.Users
-                             where c.CurLocationId == 1
-                             select c);
-                ViewBag.Users = query.ToList();
-                ViewData["UserLocation"] = "Solution" + user.CurLocationId;
-
-                var chatquery = (from c in db.Chat
-                             where c.LocId == user.CurLocationId
-                             select c);
-                ViewBag.Chat = chatquery.ToList();
-
-                ViewData["Title"] = model.Name;
-                model.Name = "";
-                return View(model);
-            }
-            ViewData["UserLocation"] = "Solution" + user.CurLocationId;
-            ViewData["Title"] = model.Name;
-            model.Name = "";
-            return View(model);
-        }
-        [HttpGet]
-        public async Task<IActionResult> Solution2Async()
-        {
-            var cookieid = Int32.Parse(HttpContext.Request.Cookies.FirstOrDefault(x => x.Key == "UserId").Value);
-            UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Id == cookieid);
-
-            Solution1Model model = await db.Locations.FirstOrDefaultAsync(l => l.Id == 2);
-            if (user != null)
-            {
-                var entityuser = db.Users.Where(u => u.Id == user.Id).FirstOrDefault();
-                entityuser.CurLocationId = model.Id;
-                await db.SaveChangesAsync();
-                var query = (from c in db.Users
-                             where c.CurLocationId == 2
+                             where c.CurLocationId == number
                              select c);
                 ViewBag.Users = query.ToList();
                 ViewData["UserLocation"] = "Solution" + user.CurLocationId;
@@ -97,15 +63,34 @@ namespace THEgame.Controllers
                                  where c.LocId == user.CurLocationId
                                  select c);
                 ViewBag.Chat = chatquery.ToList();
-                
+
                 ViewData["Title"] = model.Name;
                 model.Name = "";
                 return View(model);
             }
-            ViewData["Title"] = model.Name;
             ViewData["UserLocation"] = "Solution" + user.CurLocationId;
+            ViewData["LocationType"] = model.Type;
+            ViewData["Title"] = model.Name;
             model.Name = "";
             return View(model);
+        }
+        [HttpGet]
+        public async Task<IActionResult> Solution1Async()
+        {
+            await LocationDbChangesAsync(1);
+            return View();
+        }
+        [HttpGet]
+        public async Task<IActionResult> Solution2Async()
+        {
+            await LocationDbChangesAsync(2);
+            return View();
+        }
+        [HttpGet]
+        public async Task<IActionResult> Solution3Async()
+        {
+            await LocationDbChangesAsync(3);
+            return View();
         }
         [HttpPost]
         public async Task<IActionResult> SendMessage(Solution1Model model)
@@ -115,11 +100,13 @@ namespace THEgame.Controllers
             if (user != null)
             {
                 var message = model.Name;
+                if(model.Name != null) { 
                 db.Chat.Add(new ChatModel() { LocId = user.CurLocationId, Message = message.ToString(), CreatorId = user.Id, CreateDate = DateTime.Now, UserName = user.Name});
                 await db.SaveChangesAsync();
-
                 
                 return RedirectToAction("Solution"+user.CurLocationId, "Solutions", model);
+                }
+                return RedirectToAction("Solution" + user.CurLocationId, "Solutions", model);
             }
             return RedirectToAction("Solution"+user.CurLocationId, "Solutions", model);
         }
