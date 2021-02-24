@@ -5,50 +5,216 @@
         height: 30px;
     }
 </style>
-@*<div style="margin-left: 10px; font-size: 22px; max-width: 400px;">
-    <h4 class="display-4 border-bottom">Special</h4>
-    <form class="row mb-lg-n5">
+<form asp-action="Index" asp-controller="Home" asp-anti-forgery="true" class="indexright">
+    @Html.HiddenFor(m => m.TotalPoints)
+    <h4 class="display-4 border-bottom">Характеристики</h4>
         <div class="col-auto">
-            <input type="text" readonly class="form-control-plaintext" id="stat0" value="Strength">
+            Очков для распределения: <span id="totalspan"></span>
+        </div> 
+        <div class="col-auto">
+            Слава
+            <input type="text" class="form-control-sm" style="width: 50px;font-size: 15px;margin-left: 8.5%;" asp-for="Glory" readonly/>
+            <button type="button" class="btn btn-success" id="incglory">+</button>
+            <button type="button" class="btn btn-success" id="decglory">-</button>
         </div>        
         <div class="col-auto">
-            <input type="email" class="form-control-sm" />
+            Могущество
+            <input type="text" class="form-control-sm" style="width: 50px; font-size: 15px;" asp-for="Power"  />
+            <button type="button" class="btn btn-success" id="incpower">+</button>
+            <button type="button" class="btn btn-success" id="decpower">-</button>
         </div>
         <div class="col-auto">
-            <input type="text" readonly class="form-control-plaintext" id="stat1" value="Perception">
+            Знание
+            <input type="text" class="form-control-sm" style="width: 50px; font-size: 15px;" asp-for="Knowledge" />
+            <button type="button" class="btn btn-success" id="incKnowledge">+</button>
+            <button type="button" class="btn btn-success" id="decKnowledge">-</button>
         </div>
         <div class="col-auto">
-            <input type="email" class="form-control-sm" />
+            Разрушение
+            <input type="text" class="form-control-sm" style="width: 50px; font-size: 15px;" asp-for="Destruction" />
+            <button type="button" class="btn btn-success" id="incDestruction">+</button>
+            <button type="button" class="btn btn-success" id="decDestruction">-</button>
         </div>
         <div class="col-auto">
-            <input type="text" readonly class="form-control-plaintext" id="stat1" value="Endurance">
+            Гуманизм
+            <input type="text" class="form-control-sm" style="width: 50px; font-size: 15px;" asp-for="Humanism" />
+            <button type="button" class="btn btn-success" id="incHumanism">+</button>
+            <button type="button" class="btn btn-success" id="decHumanism">-</button>
         </div>
         <div class="col-auto">
-            <input type="email" class="form-control-sm" />
+            Власть
+            <input type="text" class="form-control-sm" style="width: 50px; font-size: 15px;" asp-for="Authority" />
+            <button type="button" class="btn btn-success" id="incAuthority">+</button>
+            <button type="button" class="btn btn-success" id="decAuthority">-</button>
         </div>
         <div class="col-auto">
-            <input type="text" readonly class="form-control-plaintext" id="stat1" value="Charisma">
+            Богатство
+            <input type="text" class="form-control-sm" style="width: 50px; font-size: 15px;" asp-for="Rich" />
+            <button type="button" class="btn btn-success" id="incRich">+</button>
+            <button type="button" class="btn btn-success" id="decRich">-</button>
         </div>
         <div class="col-auto">
-            <input type="email" class="form-control-sm" />
+            Ремесло
+            <input type="text" class="form-control-sm" style="width: 50px; font-size: 15px;" asp-for="Craft" />
+            <button type="button" class="btn btn-success" id="incCraft">+</button>
+            <button type="button" class="btn btn-success" id="decCraft">-</button>
         </div>
         <div class="col-auto">
-            <input type="text" readonly class="form-control-plaintext" id="stat1" value="Intelligence">
+            Дитя природы
+            <input type="text" class="form-control-sm" style="width: 50px; font-size: 15px;" asp-for="ChildOfNature" />
+            <button type="button" class="btn btn-success" id="incChildOfNature">+</button>
+            <button type="button" class="btn btn-success" id="decChildOfNature">-</button>
         </div>
-        <div class="col-auto">
-            <input type="email" class="form-control-sm" />
-        </div>
-        <div class="col-auto">
-            <input type="text" readonly class="form-control-plaintext" id="stat1" value="Agility">
-        </div>
-        <div class="col-auto">
-            <input type="email" class="form-control-sm" />
-        </div>
-        <div class="col-auto">
-            <input type="text" readonly class="form-control-plaintext" id="stat1" value="Luck">
-        </div>
-        <div class="col-auto">
-            <input type="email" class="form-control-sm" />
-        </div>
-    </form>
-</div>*@
+        <button type="submit" class="btn btn-danger">Записать</button>
+</form>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        let count = parseInt($("#TotalPoints").val(), 10);
+        let max = parseInt($("#TotalPoints").val(), 10);
+        $("#totalspan").text(count);
+        document.getElementById("incglory").addEventListener("click", () => {
+            if (count > 0 && count <= max) {
+                $("#Glory").val(parseInt($("#Glory").val(), 10) + 1);
+                count = count - 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("incpower").addEventListener("click", () => {
+            if (count > 0 && count <= max) {
+                $("#Power").val(parseInt($("#Power").val(), 10) + 1);
+                count = count - 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("incKnowledge").addEventListener("click", () => {
+            if (count > 0 && count <= max) {
+                $("#Knowledge").val(parseInt($("#Knowledge").val(), 10) + 1);
+                count = count - 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("incDestruction").addEventListener("click", () => {
+            if (count > 0 && count <= max) {
+                $("#Destruction").val(parseInt($("#Destruction").val(), 10) + 1);
+                count = count - 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("incHumanism").addEventListener("click", () => {
+            if (count > 0 && count <= max) {
+                $("#Humanism").val(parseInt($("#Humanism").val(), 10) + 1);
+                count = count - 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("incAuthority").addEventListener("click", () => {
+            if (count > 0 && count <= max) {
+                $("#Authority").val(parseInt($("#Authority").val(), 10) + 1);
+                count = count - 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("incRich").addEventListener("click", () => {
+            if (count > 0 && count <= max) {
+                $("#Rich").val(parseInt($("#Rich").val(), 10) + 1);
+                count = count - 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("incCraft").addEventListener("click", () => {
+            if (count > 0 && count <= max) {
+                $("#Craft").val(parseInt($("#Craft").val(), 10) + 1);
+                count = count - 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("incChildOfNature").addEventListener("click", () => {
+            if (count > 0 && count <= max) {
+                $("#ChildOfNature").val(parseInt($("#ChildOfNature").val(), 10) + 1);
+                count = count - 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("decglory").addEventListener("click", () => {
+            if (count > 0 && count < max && parseInt($("#Glory").val(), 10) != 0) {
+                $("#Glory").val(parseInt($("#Glory").val(), 10) - 1);
+                count = count + 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("decpower").addEventListener("click", () => {
+            if (count > 0 && count < max && parseInt($("#Power").val(), 10) != 0) {
+                $("#Power").val(parseInt($("#Power").val(), 10) - 1);
+                count = count + 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("decKnowledge").addEventListener("click", () => {
+            if (count > 0 && count < max && parseInt($("#Knowledge").val(), 10) != 0) {
+                $("#Knowledge").val(parseInt($("#Knowledge").val(), 10) - 1);
+                count = count + 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("decDestruction").addEventListener("click", () => {
+            if (count > 0 && count < max && parseInt($("#Destruction").val(), 10) != 0) {
+                $("#Destruction").val(parseInt($("#Destruction").val(), 10) - 1);
+                count = count + 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("decHumanism").addEventListener("click", () => {
+            if (count > 0 && count < max && parseInt($("#Humanism").val(), 10) != 0) {
+                $("#Humanism").val(parseInt($("#Humanism").val(), 10) - 1);
+                count = count + 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("decAuthority").addEventListener("click", () => {
+            if (count > 0 && count < max && parseInt($("#Authority").val(), 10) != 0) {
+                $("#Authority").val(parseInt($("#Authority").val(), 10) - 1);
+                count = count + 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("decRich").addEventListener("click", () => {
+            if (count > 0 && count < max && parseInt($("#Rich").val(), 10) != 0) {
+                $("#Rich").val(parseInt($("#Rich").val(), 10) - 1);
+                count = count + 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("decCraft").addEventListener("click", () => {
+            if (count > 0 && count < max && parseInt($("#Craft").val(), 10) != 0) {
+                $("#Craft").val(parseInt($("#Craft").val(), 10) - 1);
+                count = count + 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("decChildOfNature").addEventListener("click", () => {
+            if (count > 0 && count < max && parseInt($("#ChildOfNature").val(), 10) != 0) {
+                $("#ChildOfNature").val(parseInt($("#ChildOfNature").val(), 10) - 1);
+                count = count + 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+    });
+</script>

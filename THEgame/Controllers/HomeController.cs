@@ -30,9 +30,21 @@ namespace THEgame.Controllers
             var cookieid = Int32.Parse(HttpContext.Request.Cookies.FirstOrDefault(x => x.Key == "UserId").Value);
             UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Id == cookieid );
             ViewData["UserLocation"] = "Solution" + user.CurLocationId;
-
-            IndexModel model = new IndexModel() { Id = user.Id, Sex = user.Sex, Race = user.Race, RaceDis = user.RaceDis };
-            
+            var entitychar = db.Character.Where(u => u.UserId == user.Id).FirstOrDefault();
+            IndexModel model = new IndexModel() { Id = user.Id, Sex = user.Sex, Race = user.Race, RaceDis = user.RaceDis, TotalPoints = 8 + user.CharLevel };
+            if(entitychar != null)
+            {
+                model.Glory = entitychar.Glory;
+                model.Power = entitychar.Power;
+                model.Knowledge = entitychar.Knowledge;
+                model.Authority = entitychar.Authority;
+                model.Rich = entitychar.Rich;
+                model.Destruction = entitychar.Destruction;
+                model.ChildOfNature = entitychar.ChildOfNature;
+                model.Craft = entitychar.Craft;
+                model.Humanism = entitychar.Humanism;
+                model.TotalPoints = entitychar.TotalPoints;
+            }
             return View(model);
         }
         [HttpPost]
@@ -45,7 +57,6 @@ namespace THEgame.Controllers
                 UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Id == model.Id);
                 if (user == null)
                 {
-                    // добавляем пользователя в бд
                     var entityuser = db.Users.Where(u => u.Id == user.Id).FirstOrDefault();
                     entityuser.Sex = model.Sex;
                     entityuser.Race = model.Race;
@@ -54,7 +65,42 @@ namespace THEgame.Controllers
 
                     return RedirectToAction("Index", "Home");
                 }
-                else
+                CharacterModel charatcer = await db.Character.FirstOrDefaultAsync(u => u.UserId == model.Id);
+                if (charatcer == null) {
+                    var entitychar = new CharacterModel();
+                    entitychar.Glory = model.Glory;
+                    entitychar.Power = model.Power;
+                    entitychar.Knowledge = model.Knowledge;
+                    entitychar.Authority = model.Authority;
+                    entitychar.Rich = model.Rich;
+                    entitychar.Destruction = model.Destruction;
+                    entitychar.ChildOfNature = model.ChildOfNature;
+                    entitychar.Craft = model.Craft;
+                    entitychar.Humanism = model.Humanism;
+                    entitychar.TotalPoints = model.TotalPoints;
+                    db.Character.Add(entitychar);
+                    await db.SaveChangesAsync();
+
+                    return RedirectToAction("Index", "Home");
+                }
+                if (charatcer != null)
+                {
+                    var entitychar = db.Character.Where(u => u.UserId == user.Id).FirstOrDefault();
+                    entitychar.Glory = model.Glory;
+                    entitychar.Power = model.Power;
+                    entitychar.Knowledge = model.Knowledge;
+                    entitychar.Authority = model.Authority;
+                    entitychar.Rich = model.Rich;
+                    entitychar.Destruction = model.Destruction;
+                    entitychar.ChildOfNature = model.ChildOfNature;
+                    entitychar.Craft = model.Craft;
+                    entitychar.Humanism = model.Humanism;
+                    entitychar.TotalPoints = model.TotalPoints;
+                    await db.SaveChangesAsync();
+
+                    return RedirectToAction("Index", "Home");
+                }
+                model.TotalPoints = 8 + user.CharLevel;
                     model.Sex = user.Sex;
                     model.Race = user.Race;
                     model.RaceDis = user.RaceDis;

@@ -47,12 +47,22 @@
             </div>
         </nav>
     </header>
+    @if (ViewData["LocationType"] != null)
+    {
     <div class="containerbody">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-
+    }
+    else 
+    {
+    <div class="containerbodyindex">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    }
     <footer class="footer text-muted">
         <div class="container">
             &copy; 2021 - THEgame - Свобода выбора

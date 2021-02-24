@@ -14,5 +14,7 @@ namespace THEgame.ViewModels
         public int Humanism { get; set; }
         public int Authority { get; set; }
         public int Destruction { get; set; }
+        public int ChildOfNature { get; set; }
+        public int TotalPoints { get; set; }
     }
 }

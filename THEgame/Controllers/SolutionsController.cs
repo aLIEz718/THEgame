@@ -63,7 +63,7 @@ namespace THEgame.Controllers
                                  where c.LocId == user.CurLocationId
                                  select c);
                 ViewBag.Chat = chatquery.ToList();
-
+                ViewData["LocationType"] = model.Type;
                 ViewData["Title"] = model.Name;
                 model.Name = "";
                 return View(model);

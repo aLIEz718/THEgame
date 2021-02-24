@@ -34,6 +34,11 @@ a {
     min-height: 600px;
     margin: 0 10%;
 }
+.containerbodyindex {
+    z-index: 1;
+    min-height: 600px;
+    margin: 0 15%;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -286,4 +291,10 @@ body {
 }
 .chatname {
     color: red;
+}
+.indexright {
+    margin-left: 100px;
+    margin-top: 1.6%;
+    font-size: 22px;
+    min-width: 50%;
 }
