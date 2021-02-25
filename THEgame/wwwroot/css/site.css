@@ -171,12 +171,13 @@ body {
     min-width: 45px;
 }
 .linkimg {
-    max-width: 50%;
+    width: 17%;
     max-height: 500px;
     position: absolute;
-    right: 85%;
-    opacity: 0.7;
+    right: 20%;
+    opacity: 0.8;
     z-index: -1;
+    top: 36%;
 }
 .gender {
     padding: 5px;

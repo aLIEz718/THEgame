@@ -12,20 +12,26 @@
                     <div class="chatmessage"><span class="chatname">@chat.UserName:</span> @chat.Message</div>
                 }
             </div>
-            </div>
-            <div>
-                <input class="textsol" asp-for="Name" type="text" id="flex1" autocomplete="off">
-                <button type="submit" style="float:right;" class="btn btn-warning">Отправить</button>
-            </div>
-        
+        </div>
+        <div>
+            <input class="textsol" asp-for="Name" type="text" id="flex1" autocomplete="off">
+            <button type="submit" style="float:right;" class="btn btn-warning">Отправить</button>
+        </div>
+
         <div class="canvasppl">
             <span class="border-bottom">Игроки в этой локации</span>
             <ul class="canvasppllist">
-            @foreach (UserModel country in ViewBag.Users)
-            {                
-                    <li>@country.Name <span class="classicon" id="@country.Id" disabled="disabled" title="Пол: @country.Sex;<br> Раса: @country.Race;<br> Уровень: @country.CharLevel;">&#936;</span></li>                
-            }
-                </ul>
+                @foreach (UserModel country in ViewBag.Users)
+                {
+                    <li>
+                        @country.Name <span class="classicon" disabled="disabled" title="Пол: @country.Sex;<br> Раса: @country.Race;<br> Уровень: @country.CharLevel;">
+                            <form asp-action="PartyRequest" asp-controller="Solutions" asp-route-requestuserid="@country.Id" req id="@country.Id">
+                                <a onclick="SaveRequest(@country.Id)">&#929;</a>
+                            </form>
+                        </span>
+                    </li>
+                }
+            </ul>
         </div>
     </div>
 </form>
@@ -35,4 +41,25 @@
             $("#" + i).tooltip({ placement: 'right', html: true });
         }
     });
+    function SaveRequest(userid) {
+        var actionUrl = "@Url.Action("PartyRequest", "Solutions", new { requestuserid = 2 })";
+        var dataToSend = $("#" + userid).serialize();
+
+        jQuery.ajax({
+            url: actionUrl,
+            type: 'POST',
+            dataType: 'json',
+            data: dataToSend,
+            async: true,
+            success: function (result) {
+                $("#" + userid).hide();
+            },
+            error: function (e, str1) {
+                if (str1 == "parsererror")
+                    alert("Доступ запрещен!.");
+                else
+                    alert("При загрузке данных произошла ошибка.");
+            }
+        });
+    }
 </script>

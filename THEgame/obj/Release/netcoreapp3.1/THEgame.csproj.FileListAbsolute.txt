@@ -76,7 +76,6 @@ C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Shared\_LayoutE
 C:\THEgame\THEgame\THEgame\bin\Release\netcoreapp3.1\libman.json
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Home\IndexLeft.cshtml.g.cs
-C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Home\IndexRight.cshtml.g.cs
 C:\THEgame\THEgame\THEgame\bin\Release\netcoreapp3.1\EntityFramework.SqlServer.dll
 C:\THEgame\THEgame\THEgame\bin\Release\netcoreapp3.1\EntityFramework.dll
 C:\THEgame\THEgame\THEgame\bin\Release\netcoreapp3.1\Microsoft.Data.SqlClient.dll
@@ -134,3 +133,4 @@ C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.MvcApplicationParts
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Solutions\Solution3.cshtml.g.cs
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Solutions\Solution4.cshtml.g.cs
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Solutions\Solution5.cshtml.g.cs
+C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Home\IndexStats.cshtml.g.cs

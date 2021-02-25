@@ -129,7 +129,7 @@ namespace THEgame.Controllers
         {
             return PartialView(model);
         }
-        public IActionResult IndexRight(SolutionAModel model)
+        public IActionResult IndexStats(SolutionAModel model)
         {
             return PartialView(model);
         }
