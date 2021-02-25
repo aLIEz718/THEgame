@@ -14,7 +14,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand border-right-0" asp-area="" asp-controller="Home" asp-action="Index">Your game</a>
+                <a class="navbar-brand border-right-0" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/favicon.ico" class="imgtopmenu" /></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -25,28 +25,47 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Rules">Правила</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Admin">Настройки</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Admin">Персонаж</a>
                         </li>
+                        @if (ViewData["LocationType"] != null)
+                        {
+                            if (ViewData["LocationType"].ToString() == "Деревня")
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Solutions" asp-action="Solution0">Доска объявлений</a>
+                                </li>
+                            }
+                        }
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Solutions" asp-action="Solution0">Доска объявлений</a>
-                        </li>
-                        <li class="nav-item" style="text-align:left;">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Сменить пользователя</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Solutions" asp-action="@(ViewData["UserLocation"])" id="location">В локацию</a>
                         </li>
                     </ul>
+                </div>
+                <div class="nav-item" style="text-align:right;">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Сменить пользователя</a>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
+    @if (ViewData["LocationType"] != null)
+    {
+    <div class="containerbody">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-
+    }
+    else 
+    {
+    <div class="containerbodyindex">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    }
     <footer class="footer text-muted">
         <div class="container">
-            &copy; 2021 - THEgame - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2021 - THEgame - Свобода выбора
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

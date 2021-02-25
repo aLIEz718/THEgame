@@ -5,9 +5,9 @@ namespace THEgame.Models
 {
     public class SolutionVModel
     {
-        public int a { get; set; }
-        public int b { get; set; }
-        public int c { get; set; }
-        public List<int> numbers { get; set; }
+        public int Id { get; set; }
+        public string Sex { get; set; }
+        public string Race { get; set; }
+        public string RaceDis { get; set; }
     }
 }

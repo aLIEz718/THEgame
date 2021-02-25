@@ -1,11 +1,133 @@
 ﻿@model IndexModel
-<blockquote class="blockquote text-center">
-    <p class="mb-1">@Model.HeaderText</p>
+@{
+    ViewData["Title"] = "weedSoldiers";
+}
+<style>
+    .blockquote {
+        font-size: 17px;
+    }
+</style>
+<blockquote class="blockquote text-justify">
+    <p class="mb-1">
+        <div style="margin-left: 2.85%; font-weight: bold;">Ты! Да, именно ты, кто читает эту надпись, запомни:</div>
+        <ul>
+<li>Ты тот - кто ты есть с рождения, а значит после нажатия кнопки "сохранить" уже не сможешь ничего поменять!</li>
+<li>Досконально продумай и настрой своего игрового персонажа! (Странно встречать "Камень женского пола 2ур. "немой" статус: пытается колдовать")</li>
+<li>Найдите себе цель в этом мире и "распределите" очки характеристик по своим предпочтениям.</li>
+<li>Закажите пиццу и наслаждайтесь игрой!</li>
+            </ul>
+    </p>
     <br />
     <footer class="blockquote-footer" style="text-align:right;">Моршу <cite title="Source Title">тот самый</cite></footer>
 </blockquote>
-
+@Html.HiddenFor(m => m.Sex)
+@Html.HiddenFor(m => m.Race)
+@Html.HiddenFor(m => m.RaceDis)
+@Html.HiddenFor(m => m.Speach)
 <div class="solflex">
-    @Html.Partial("IndexLeft")
-    @Html.Partial("IndexRight")        
+        <form asp-action="IndexUser" asp-controller="Home" asp-anti-forgery="true" class="codetext">
+            <div class="validation" asp-validation-summary="ModelOnly"></div>
+            @if (Model.Sex.Equals("Мужской"))
+            {
+            <img src="~/9aa26a185905ed03cf9f10c435e7d95e.jpg" class="linkimg" />
+            }
+            else if (Model.Sex.Equals("Женский")) 
+            {
+            <img src="~/vfsrhTP8V7E.jpg" class="linkimg" />
+            } else if (Model.Sex.Equals("Другой")) 
+            {
+            <img src="~/PinClipart.com_cthulhu-clip-art_1428739.png" class="linkimg" />
+            }
+            <div>
+                <h4 class="display-4">Основные параметры</h4>
+                <div class="border-top gender">
+                    Пол персонажа:
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="flexRadioDefault1" asp-for="Sex" value="Мужской">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Мужской
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="flexRadioDefault2" asp-for="Sex" value="Женский">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Женский
+                        </label>
+                    </div>
+                    <div class="form-check border-bottom">
+                        <input class="form-check-input" type="radio" id="flexRadioDefault3" asp-for="Sex" value="Другой">
+                        <label class="form-check-label" for="flexRadioDefault3">
+                            Другой
+                        </label>
+                    </div>
+                </div>
+                <div class="gender">
+            Речь персонажа:
+            <div class="form-check">                
+                <input class="form-check-input" type="radio" id="flexRadioDefault4" asp-for="Speach" value="Немой">
+                <label class="form-check-label" for="flexRadioDefault4">
+                    Немой
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="flexRadioDefault5" asp-for="Speach" value="Непонятные звуки">
+                <label class="form-check-label" for="flexRadioDefault5">
+                    Непонятные звуки
+                </label>
+            </div>
+            <div class="form-check border-bottom">
+                <input class="form-check-input" type="radio" id="flexRadioDefault6" asp-for="Speach" value="Общепринятая речь">
+                <label class="form-check-label" for="flexRadioDefault6">
+                    Общепринятая речь
+                </label>
+            </div>
+        </div>
+                <div class="form-check">
+                    <label class="form-check-label" for="flex1">
+                        Раса
+                    </label>
+                    <input class="form-control" type="text" id="flex1" asp-for="Race" style="width: 30%;">
+
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label" for="flex2">
+                        Описание расы
+                    </label>
+                    <textarea class="form-control" id="flex2" rows="3" asp-for="RaceDis"></textarea>
+                </div>
+                <button type="submit" id="btn" class="btn btn-info" style="float:right">Сохранить</button>
+            </div>
+        </form>
+    @Html.Partial("IndexStats")
+<div class="perksindex">
+    <div>
+        <h4 class="display-4">Навыки</h4>
+        <div class="border-top gender"></div>
+    </div>
 </div>
+</div>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {        
+        if (!$("#Sex").val() == "") {
+            $("#flexRadioDefault1").prop("disabled", true);
+            $("#flexRadioDefault2").prop("disabled", true);
+            $("#flexRadioDefault3").prop("disabled", true );
+        }
+        if (!$("#Race").val() == "") {
+            $("#flex1").prop("disabled", true);
+        }
+        if (!$("#RaceDis").val() == "") {
+            $("#flex2").prop("disabled", true);
+        }
+        if (!$("#Speach").val() == "") {
+            $("#flexRadioDefault4").prop("disabled", true);
+            $("#flexRadioDefault5").prop("disabled", true);
+            $("#flexRadioDefault6").prop("disabled", true );
+        }
+        if (!$("#Race").val() == "" && !$("#RaceDis").val() == "" && !$("#Sex").val() == "") {
+            if (!$("#Speach").val() == "") {
+                $("#btn").hide();
+            }
+        }
+    });
+</script>

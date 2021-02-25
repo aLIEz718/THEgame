@@ -1,75 +1,74 @@
 ﻿@model IndexModel
-<div class="codetext">
-    <img src="https://i.pinimg.com/originals/9a/a2/6a/9aa26a185905ed03cf9f10c435e7d95e.jpg" class="linkimg" />
-    <div>
-        <h4 class="display-4 border-bottom">Settings</h4>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                Lamp Oil
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-                Rope
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-                Bombs
-            </label>
-        </div>
-        <div class="border-top">Пол персонажа:</div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-            <label class="form-check-label" for="flexRadioDefault1">
-                Мужской
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <label class="form-check-label" for="flexRadioDefault2">
-                Женский
-            </label>
-        </div>
-        <div class="border-top">Класс персонажа:</div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefaultt" id="flexRadioDefaultt1">
-            <label class="form-check-label" for="flexRadioDefaultt1">
-                Воин
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefaultt" id="flexRadioDefaultt2" checked>
-            <label class="form-check-label" for="flexRadioDefaultt2">
-                Волшебник
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefaultt" id="flexRadioDefaultt3" checked>
-            <label class="form-check-label" for="flexRadioDefaultt3">
-                (сбросьте карту, чтобы подрезать на 2 урона)
-            </label>
-        </div>
-        <div class="border-top">Уровень сложности:</div>
+@{
+    @*<div class="border-top">Уровень сложности:</div>
         <div class="form-check form-switch">
             <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
             <label class="form-check-label" for="flexSwitchCheckDefault">Хардкор</label>
+        </div>*@
+}
+@Html.HiddenFor(m => m.Sex)
+@Html.HiddenFor(m => m.Race)
+@Html.HiddenFor(m => m.RaceDis)
+@Html.HiddenFor(m => m.Speach)
+<form asp-action="IndexUser" asp-controller="Home" asp-anti-forgery="true" class="codetext">
+    <img src="~/5890d8e9b2cb5b18709ca623.png" class="linkimg" />
+    <div>
+        <h4 class="display-4">Основные параметры</h4>
+        <div class="border-top gender">
+            Пол персонажа:
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="flexRadioDefault1" asp-for="Sex" value="Мужской">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Мужской
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="flexRadioDefault2" asp-for="Sex" value="Женский">
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Женский
+                </label>
+            </div>
+            <div class="form-check border-bottom">
+                <input class="form-check-input" type="radio" id="flexRadioDefault3" asp-for="Sex" value="Другой">
+                <label class="form-check-label" for="flexRadioDefault3">
+                    Другой
+                </label>
+            </div>
         </div>
-    </div>
-</div>
-<div class="sidenav">
-    <a href="#button1">кнопка1</a>
-    <a href="#button2">кнопка2</a>
-    <button class="dropdown-btn">
-        Button3
-        <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-container">
-        <a href="#">button4</a>
-        <a href="#">button5</a>
-        <a href="#">button6</a>
-    </div>
-</div>
+        <div class="gender">
+            Речь персонажа:
+            <div class="form-check">                
+                <input class="form-check-input" type="radio" id="flexRadioDefault4" asp-for="Speach" value="Немой">
+                <label class="form-check-label" for="flexRadioDefault4">
+                    Немой
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="flexRadioDefault5" asp-for="Speach" value="Непонятные звуки">
+                <label class="form-check-label" for="flexRadioDefault5">
+                    Непонятные звуки
+                </label>
+            </div>
+            <div class="form-check border-bottom">
+                <input class="form-check-input" type="radio" id="flexRadioDefault6" asp-for="Speach" value="Общепринятая речь">
+                <label class="form-check-label" for="flexRadioDefault6">
+                    Общепринятая речь
+                </label>
+            </div>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label" for="flex1">
+                Раса
+            </label>
+            <input class="form-control" type="text" id="flex1" asp-for="Race" style="width: 30%">
+
+        </div>
+        <div class="form-check">
+            <label class="form-check-label" for="flex2">
+                Описание расы
+            </label>
+            <textarea class="form-control" id="flex2" rows="3" asp-for="RaceDis"></textarea>
+        </div>
+        <button type="submit" class="btn btn-info" id="btn">Сохранить</button>
+    </div>    
+</form>

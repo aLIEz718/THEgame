@@ -24,9 +24,13 @@
     ".NETCoreApp,Version=v3.1": {
       "THEgame/1.0.0": {
         "dependencies": {
+          "AjaxControlToolkit": "20.1.0",
           "EntityFramework": "6.4.4",
+          "HelperMethods.HTMLHelper": "1.0.1",
           "Microsoft.EntityFrameworkCore": "5.0.3",
+          "Microsoft.EntityFrameworkCore.Analyzers": "5.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.3",
+          "Microsoft.jQuery.Unobtrusive.Ajax": "3.2.6",
           "System.IO": "4.3.0",
           "System.Linq.Expressions": "4.3.0",
           "System.Net.Primitives": "4.3.1",
@@ -309,6 +313,17 @@
           "THEgame.dll": {}
         }
       },
+      "AjaxControlToolkit/20.1.0": {
+        "runtime": {
+          "lib/net40/AjaxControlToolkit.dll": {
+            "assemblyVersion": "20.1.0.0",
+            "fileVersion": "20.1.0.0"
+          }
+        },
+        "compile": {
+          "lib/net40/AjaxControlToolkit.dll": {}
+        }
+      },
       "bootstrap.sass/4.6.0": {
         "dependencies": {
           "jQuery": "3.0.0",
@@ -338,6 +353,7 @@
           "lib/netstandard2.1/EntityFramework.dll": {}
         }
       },
+      "HelperMethods.HTMLHelper/1.0.1": {},
       "jQuery/3.0.0": {},
       "Microsoft.CSharp/4.7.0": {},
       "Microsoft.Data.SqlClient/2.0.1": {
@@ -700,6 +716,11 @@
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll": {}
+        }
+      },
+      "Microsoft.jQuery.Unobtrusive.Ajax/3.2.6": {
+        "dependencies": {
+          "jQuery": "3.0.0"
         }
       },
       "Microsoft.NETCore.Platforms/3.1.0": {},
@@ -3104,6 +3125,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AjaxControlToolkit/20.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pW4bkn7IKznIDLS61WOdicrbIR8Njpc0omO71w+xGd+iRjz+41vf+s7PVFpFZ2CfqpdlQIJnObZb67XwarNNxg==",
+      "path": "ajaxcontroltoolkit/20.1.0",
+      "hashPath": "ajaxcontroltoolkit.20.1.0.nupkg.sha512"
+    },
     "bootstrap.sass/4.6.0": {
       "type": "package",
       "serviceable": true,
@@ -3117,6 +3145,13 @@
       "sha512": "sha512-yj1+/4tci7Panu3jKDHYizxwVm0Jvm7b7m057b5h4u8NUHGCR8WIWirBTw+8EptRffwftIWPBeIRGNKD1ewEMQ==",
       "path": "entityframework/6.4.4",
       "hashPath": "entityframework.6.4.4.nupkg.sha512"
+    },
+    "HelperMethods.HTMLHelper/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-78PPs1VMbHEwbMBP7eNkMeKdgEUg1bJGxZtW41whuvlIgT39uGUKxYLiKZxPC/RiK8ab/mkdduNgT8G5Mj9mLw==",
+      "path": "helpermethods.htmlhelper/1.0.1",
+      "hashPath": "helpermethods.htmlhelper.1.0.1.nupkg.sha512"
     },
     "jQuery/3.0.0": {
       "type": "package",
@@ -3285,6 +3320,13 @@
       "sha512": "sha512-C3OqR3QfBQ7wcC7yAsdMQqay87OsV6yWPYG/Ai3n7dvmWIGkouQhXoVxRP0xz3cAFL4hxZBXyw4aLTC421PaMg==",
       "path": "microsoft.identitymodel.tokens/5.6.0",
       "hashPath": "microsoft.identitymodel.tokens.5.6.0.nupkg.sha512"
+    },
+    "Microsoft.jQuery.Unobtrusive.Ajax/3.2.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-udg7ZBszgqxloQ+ShJRONKQAzPnJIlUhKZB+AIvZdKh7CDc5Nms69T9X0hN5i+NqMmQE6njkzdCcEb16lPdJTw==",
+      "path": "microsoft.jquery.unobtrusive.ajax/3.2.6",
+      "hashPath": "microsoft.jquery.unobtrusive.ajax.3.2.6.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "type": "package",

@@ -1,0 +1,245 @@
+﻿@model IndexModel
+<style>
+    input[type="text"] {
+        width: 50px;
+        float: right;
+    }
+    .btn-group {
+        float: right;
+        max-height: 33px;
+    }
+    .col-auto {
+        margin-bottom: 13px;
+    }
+</style>
+<form asp-action="Index" asp-controller="Home" asp-anti-forgery="true" class="indexright">
+    @Html.HiddenFor(m => m.TotalPoints)
+    <h4 class="display-4 border-bottom">Характеристики</h4>
+        <div class="col-auto">
+            Очков для распределения: <span id="totalspan"></span>
+        </div> 
+        <div class="col-auto">
+            Слава
+            <input type="text" class="form-control-sm" asp-for="Glory" readonly/>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <input type="button" class="btn btn-success" id="incglory" value="+">
+            <input type="button" class="btn btn-danger" id="decglory" value="-">
+            </div>
+        </div>        
+        <div class="col-auto">
+            Могущество
+            <input type="text" class="form-control-sm" asp-for="Power"  />
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <input type="button" class="btn btn-success" id="incpower" value="+">
+            <input type="button" class="btn btn-danger" id="decpower" value="-">
+            </div>
+        </div>
+        <div class="col-auto">
+            Знание
+            <input type="text" class="form-control-sm" asp-for="Knowledge" />
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <input type="button" class="btn btn-success" id="incKnowledge" value="+">
+            <input type="button" class="btn btn-danger" id="decKnowledge" value="-">
+            </div>
+        </div>
+        <div class="col-auto">
+            Разрушение
+            <input type="text" class="form-control-sm" asp-for="Destruction" />
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <input type="button" class="btn btn-success" id="incDestruction" value="+">
+            <input type="button" class="btn btn-danger" id="decDestruction" value="-">
+            </div>
+        </div>
+        <div class="col-auto">
+            Гуманизм
+            <input type="text" class="form-control-sm" asp-for="Humanism" />
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <input type="button" class="btn btn-success" id="incHumanism" value="+">
+            <input type="button" class="btn btn-danger" id="decHumanism" value="-">
+            </div>
+        </div>
+        <div class="col-auto">
+            Власть
+            <input type="text" class="form-control-sm" asp-for="Authority" />
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <input type="button" class="btn btn-success" id="incAuthority" value="+">
+            <input type="button" class="btn btn-danger" id="decAuthority" value="-">
+            </div>
+        </div>
+        <div class="col-auto">
+            Богатство
+            <input type="text" class="form-control-sm" asp-for="Rich" />
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <input type="button" class="btn btn-success" id="incRich" value="+">
+            <input type="button" class="btn btn-danger" id="decRich" value="-">
+            </div>
+        </div>
+        <div class="col-auto">
+            Ремесло
+            <input type="text" class="form-control-sm" asp-for="Craft" />
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <input type="button" class="btn btn-success" id="incCraft" value="+">
+            <input type="button" class="btn btn-danger" id="decCraft" value="-">
+            </div>
+        </div>
+        <div class="col-auto">
+            Дитя природы
+            <input type="text" class="form-control-sm" asp-for="ChildOfNature" />
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <input type="button" class="btn btn-success" id="incChildOfNature" value="+">
+            <input type="button" class="btn btn-danger" id="decChildOfNature" value="-">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-warning" style="float:right">Записать</button>
+</form>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        let count = parseInt($("#TotalPoints").val(), 10);
+        let max = parseInt($("#TotalPoints").val(), 10);
+        $("#totalspan").text(count);
+        document.getElementById("incglory").addEventListener("click", () => {
+            if (count > 0 && count <= max) {
+                $("#Glory").val(parseInt($("#Glory").val(), 10) + 1);
+                count = count - 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("incpower").addEventListener("click", () => {
+            if (count > 0 && count <= max) {
+                $("#Power").val(parseInt($("#Power").val(), 10) + 1);
+                count = count - 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("incKnowledge").addEventListener("click", () => {
+            if (count > 0 && count <= max) {
+                $("#Knowledge").val(parseInt($("#Knowledge").val(), 10) + 1);
+                count = count - 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("incDestruction").addEventListener("click", () => {
+            if (count > 0 && count <= max) {
+                $("#Destruction").val(parseInt($("#Destruction").val(), 10) + 1);
+                count = count - 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("incHumanism").addEventListener("click", () => {
+            if (count > 0 && count <= max) {
+                $("#Humanism").val(parseInt($("#Humanism").val(), 10) + 1);
+                count = count - 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("incAuthority").addEventListener("click", () => {
+            if (count > 0 && count <= max) {
+                $("#Authority").val(parseInt($("#Authority").val(), 10) + 1);
+                count = count - 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("incRich").addEventListener("click", () => {
+            if (count > 0 && count <= max) {
+                $("#Rich").val(parseInt($("#Rich").val(), 10) + 1);
+                count = count - 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("incCraft").addEventListener("click", () => {
+            if (count > 0 && count <= max) {
+                $("#Craft").val(parseInt($("#Craft").val(), 10) + 1);
+                count = count - 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("incChildOfNature").addEventListener("click", () => {
+            if (count > 0 && count <= max) {
+                $("#ChildOfNature").val(parseInt($("#ChildOfNature").val(), 10) + 1);
+                count = count - 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("decglory").addEventListener("click", () => {
+            if (count > 0 && count < max && parseInt($("#Glory").val(), 10) != 0) {
+                $("#Glory").val(parseInt($("#Glory").val(), 10) - 1);
+                count = count + 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("decpower").addEventListener("click", () => {
+            if (count > 0 && count < max && parseInt($("#Power").val(), 10) != 0) {
+                $("#Power").val(parseInt($("#Power").val(), 10) - 1);
+                count = count + 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("decKnowledge").addEventListener("click", () => {
+            if (count > 0 && count < max && parseInt($("#Knowledge").val(), 10) != 0) {
+                $("#Knowledge").val(parseInt($("#Knowledge").val(), 10) - 1);
+                count = count + 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("decDestruction").addEventListener("click", () => {
+            if (count > 0 && count < max && parseInt($("#Destruction").val(), 10) != 0) {
+                $("#Destruction").val(parseInt($("#Destruction").val(), 10) - 1);
+                count = count + 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("decHumanism").addEventListener("click", () => {
+            if (count > 0 && count < max && parseInt($("#Humanism").val(), 10) != 0) {
+                $("#Humanism").val(parseInt($("#Humanism").val(), 10) - 1);
+                count = count + 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("decAuthority").addEventListener("click", () => {
+            if (count > 0 && count < max && parseInt($("#Authority").val(), 10) != 0) {
+                $("#Authority").val(parseInt($("#Authority").val(), 10) - 1);
+                count = count + 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("decRich").addEventListener("click", () => {
+            if (count > 0 && count < max && parseInt($("#Rich").val(), 10) != 0) {
+                $("#Rich").val(parseInt($("#Rich").val(), 10) - 1);
+                count = count + 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("decCraft").addEventListener("click", () => {
+            if (count > 0 && count < max && parseInt($("#Craft").val(), 10) != 0) {
+                $("#Craft").val(parseInt($("#Craft").val(), 10) - 1);
+                count = count + 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+        document.getElementById("decChildOfNature").addEventListener("click", () => {
+            if (count > 0 && count < max && parseInt($("#ChildOfNature").val(), 10) != 0) {
+                $("#ChildOfNature").val(parseInt($("#ChildOfNature").val(), 10) - 1);
+                count = count + 1;
+                $("#TotalPoints").val(count);
+                $("#totalspan").text(count);
+            }
+        });
+    });
+</script>

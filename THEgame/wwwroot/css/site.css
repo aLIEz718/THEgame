@@ -29,6 +29,16 @@ a {
     z-index: 1;
     max-height: 40px;
 }
+.containerbody {
+    z-index: 1;
+    min-height: 600px;
+    margin: 0 10%;
+}
+.containerbodyindex {
+    z-index: 1;
+    min-height: 600px;
+    margin: 0 15%;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -76,6 +86,7 @@ body {
     width: 100%;
     white-space: nowrap;
     line-height: 60px; /* Vertically center the text there */
+    margin-bottom: 1.2%;
 }
 /* Фиксированный боковых навигационных ссылок, полной высоты */
 .sidenav {
@@ -139,17 +150,23 @@ body {
 .codetext {
     display: flex;
     align-items: stretch;
-    padding: 0 10px;
+    padding: 10px;
+    text-shadow: white 0 0 2px;
     margin: 3px;
     max-height: 550px;
     text-align: left;
     color: #0e5135;
-    font-size: large;
+    font-size: 15px;
+    font-weight:bold;
 }
+    .codetext input {
+        color: #0e5135;
+    }
 
 .solflex {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .solans {
@@ -190,7 +207,7 @@ body {
 .logoncontainer {
     margin: auto;
     text-align: left;
-    font-size: 20px;
+    font-size: 20px;    
 }
 .dashboard {
     display: flex;
@@ -208,3 +225,151 @@ body {
         padding: 10px;
         text-shadow: white 0 0 2px;
     }
+.imgtopmenu {
+    min-width: 45px;
+}
+.linkimg {
+    width: 17%;
+    max-height: 500px;
+    position: absolute;
+    right: 20%;
+    opacity: 0.8;
+    z-index: -1;
+    top: 36%;
+}
+.gender {
+    padding: 5px;
+}
+.locationcanvas {
+    display: flex;
+    min-height: 800px;
+    font-family: "Arial", sans-serif;
+}
+.canvasimg {
+    width: 77.75%;
+    max-height: 800px;
+    
+    border: 5px groove brown;
+}
+.canvasbuttons {
+    text-decoration: none;
+    display: block;
+    min-width: 22.25%;
+    max-height: 65px;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    text-shadow: white 0 1px 1px;
+    font-weight: bold;
+    line-height: 15px;
+    border-left: 1px double gray;
+    border-right: 1px double gray;
+    border-top: 1px double gray;
+}
+.canvasppl {
+    font-size: 15px;
+    font-weight: bold;
+    text-shadow: white 0 0 2px;
+    height: 28%;
+    border: 5px groove brown;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+    .canvasppl ul {
+        padding-left: 5px;
+    }
+    .canvasppl li {
+        padding: 0;
+        list-style: none;
+    }
+.canvasppllist li {
+    padding: 0;
+}
+.canvasright {
+    min-width: 22.25%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-left: 3px;
+}
+.namebtn {
+    width: 10px;
+    height: 10px;
+}
+.titlesol {
+    height: 43px;
+    position: absolute;
+    top: 1%;
+    left: 45%;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0px 1px 1px black;
+}
+.canvaslog {
+    min-height: 55%;
+    height: 65%;
+    border: 5px groove brown;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.formsol {
+    resize: none;
+    display: block;
+    padding: .375rem 0;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    min-width: 106%;
+    min-height: 100%;
+    max-height: 100%;
+    margin-left: 0.5%;
+    overflow-y: scroll;
+    
+}
+.textsol {
+    resize: none;
+    display: block;
+    padding: .375rem .75rem;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    min-width: 99%;
+    max-width: 99%;
+    margin-left: 0.5%;
+}
+.classicon {
+    cursor: pointer;
+}
+.chatmessage {
+}
+.chatname {
+    color: red;
+}
+.indexright {
+    margin-left: 50px;
+    margin-top: 1.6%;
+    font-size: 16px;
+    font-weight: bold;
+    color: #0e5135;
+}
+.perksindex {
+    margin-left: 50px;
+    margin-top: 1%;
+    font-size: 16px;
+    font-weight: bold;
+    min-width: 20%;
+    color: #0e5135;
+    height: 30px;
+}

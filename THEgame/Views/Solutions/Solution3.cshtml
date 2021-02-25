@@ -1,0 +1,39 @@
+﻿@using THEgame.Models.Solutions
+@model Solution1Model
+<h4 class="titlesol">@ViewData["Title"]</h4>
+<form asp-action="SendMessage" asp-controller="Solutions" class="locationcanvas">
+    <img class="canvasimg" src="~/_gzjX5-TYSA.jpg" />
+    <div class="canvasright">
+        <a class="btn btn-light canvasbuttons" asp-area="" asp-controller="Solutions" asp-action="Solution2">Горная тропа</a>
+        <a class="btn btn-light canvasbuttons" asp-area="" asp-controller="Solutions" asp-action="Solution4">Мертвый лес</a>
+        <a class="btn btn-light canvasbuttons" asp-area="" asp-controller="Solutions" asp-action="Solution5">Комариная трясина</a>
+        <div class="canvaslog">
+            <div class="formsol" id="flex2">
+                @foreach (ChatModel chat in ViewBag.Chat)
+                {
+                    <div class="chatmessage"><span class="chatname">@chat.UserName:</span> @chat.Message</div>
+                }
+            </div>
+        </div>
+        <div>
+            <input class="textsol" type="text" asp-for="Name" id="flex1" autocomplete="off">
+            <button type="submit" style="float:right;" class="btn btn-warning">Отправить</button>
+        </div>
+        <div class="canvasppl">
+            <span class="border-bottom">Игроки в этой локации</span>
+            <ul class="canvasppllist">
+            @foreach (UserModel country in ViewBag.Users)
+            {                
+                    <li>@country.Name <span class="classicon" id="@country.Id" disabled="disabled" title="Пол: @country.Sex;<br> Раса: @country.Race;<br> Уровень: @country.CharLevel;">&#936;</span></li>                
+            }
+                </ul>
+        </div>
+    </div>
+</form>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        for (let i = 1; i <= 4; i++) {
+            $("#" + i).tooltip({ placement: 'right', html: true });
+        }
+    });
+</script>
