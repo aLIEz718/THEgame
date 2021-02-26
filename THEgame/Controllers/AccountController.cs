@@ -38,11 +38,13 @@ namespace THEgame.Controllers
                 }
                 ModelState.AddModelError("", "Некорректные логин и(или) пароль");
             }
+            ViewData["UserLocation"] = "Регистрация";
             return View(model);
         }
         [HttpGet]
         public IActionResult Register()
         {
+            ViewData["UserLocation"] = "Регистрация";
             return View();
         }
         [HttpPost]
@@ -55,7 +57,7 @@ namespace THEgame.Controllers
                 if (user == null)
                 {
                     // добавляем пользователя в бд
-                    db.Users.Add(new UserModel { Name = model.Name, Password = model.Password });
+                    db.Users.Add(new UserModel { Name = model.Name, Password = model.Password, CharLevel = 1, PartyId = 0, CurLocationId = 1, SpeedPenalty = 10 }) ;
                     await db.SaveChangesAsync();
 
                     await Authenticate(model.Name); // аутентификация

@@ -11,6 +11,6 @@ namespace THEgame.Models.Solutions
         public int Id { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
-        public int Temp { get; set; }
+        public double Temp { get; set; }
     }
 }

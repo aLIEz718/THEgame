@@ -15,7 +15,6 @@ namespace THEgame.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         #region Dependency
         public IDBase dBase { get; set; }        
         #endregion
@@ -29,7 +28,7 @@ namespace THEgame.Controllers
         {
             UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Name == User.Identity.Name);
             ViewData["UserLocation"] = "Solution" + user.CurLocationId;
-            var entitychar = db.Character.Where(u => u.UserId == user.Id).FirstOrDefault();
+            var entitychar =  db.Character.Where(u => u.UserId == user.Id).FirstOrDefault();
             IndexModel model = new IndexModel() { Id = user.Id, Sex = user.Sex, Race = user.Race, RaceDis = user.RaceDis, TotalPoints = 8 + user.CharLevel, Speach = user.Speach };
             if(entitychar != null)
             {
@@ -133,11 +132,11 @@ namespace THEgame.Controllers
         {
             return PartialView(model);
         }
-        
+        [AllowAnonymous]
         public async Task<IActionResult> RulesAsync()
         {
             UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Name == User.Identity.Name);
-            ViewData["UserLocation"] = "Solution" + user.CurLocationId;
+            ViewData["UserLocation"] = "Регистрация";            
             return View();
         }
         

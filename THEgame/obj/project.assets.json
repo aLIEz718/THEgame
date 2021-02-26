@@ -6928,19 +6928,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\Vladimir\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\TheGame\\THEgame\\THEgame\\THEgame.csproj",
+      "projectUniqueName": "C:\\THEgame\\THEgame\\THEgame\\THEgame.csproj",
       "projectName": "THEgame",
-      "projectPath": "C:\\TheGame\\THEgame\\THEgame\\THEgame.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\TheGame\\THEgame\\THEgame\\obj\\",
+      "projectPath": "C:\\THEgame\\THEgame\\THEgame\\THEgame.csproj",
+      "packagesPath": "C:\\Users\\Vladimir\\.nuget\\packages\\",
+      "outputPath": "C:\\THEgame\\THEgame\\THEgame\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Vladimir\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6952,7 +6952,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -6964,7 +6963,6 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "AjaxControlToolkit": {
             "target": "Package",
@@ -7029,7 +7027,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.112\\RuntimeIdentifierGraph.json"
       }
     }
   },
