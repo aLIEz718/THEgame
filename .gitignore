@@ -14,7 +14,4 @@ TestResult.xml
 Version.cs
 Version.h
 Version.cpp
-/.vs/THEgame/config/applicationhost.config
-/.vs/THEgame/config/applicationhost.config
-/.vs/THEgame/v16
-/.vs/THEgame/bin
+/.vs
