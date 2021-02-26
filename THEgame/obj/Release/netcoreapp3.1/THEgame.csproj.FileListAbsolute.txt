@@ -1,6 +1,5 @@
 C:\TheGame\THEgame\THEgame\bin\Release\netcoreapp3.1\appsettings.Development.json
 C:\TheGame\THEgame\THEgame\bin\Release\netcoreapp3.1\appsettings.json
-C:\TheGame\THEgame\THEgame\bin\Release\netcoreapp3.1\Properties\launchSettings.json
 C:\TheGame\THEgame\THEgame\bin\Release\netcoreapp3.1\THEgame.exe
 C:\TheGame\THEgame\THEgame\bin\Release\netcoreapp3.1\THEgame.deps.json
 C:\TheGame\THEgame\THEgame\bin\Release\netcoreapp3.1\THEgame.runtimeconfig.json
@@ -136,3 +135,4 @@ C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Solutions\Solut
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Home\IndexStats.cshtml.g.cs
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.csproj.CoreCompileInputs.cache
 C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.genruntimeconfig.cache
+C:\TheGame\THEgame\THEgame\obj\Release\netcoreapp3.1\scopedcss\bundle\THEgame.styles.css
