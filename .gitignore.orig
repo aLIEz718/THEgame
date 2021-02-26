@@ -15,11 +15,14 @@ Version.cs
 Version.h
 Version.cpp
 /.vs
-/.vs/THEgame/v16/.suo
+<<<<<<< HEAD
+=======
+/THEgame/obj/Release/netcoreapp3.1/THEgame.assets.cache
 /THEgame/obj/Release/netcoreapp3.1/THEgame.csprojAssemblyReference.cache
 /.vs/THEgame/config/applicationhost.config
 /.vs/THEgame/v16/.suo
 /.vs/THEgame/config/applicationhost.config
 /.vs/THEgame/v16/.suo
 /.vs/THEgame/config/applicationhost.config
+>>>>>>> b0785c9c902b0c502066685635aeeb1f3af2457a
 /.vs/THEgame/v16/.suo
