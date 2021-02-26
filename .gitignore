@@ -16,7 +16,5 @@ Version.h
 Version.cpp
 /.vs/THEgame/config/applicationhost.config
 /.vs/THEgame/config/applicationhost.config
-/.vs/THEgame/v16/.suo
-/.vs/THEgame/v16/Server/sqlite3/storage.ide-shm
-/.vs/THEgame/v16/Server/sqlite3/storage.ide-wal
+/.vs/THEgame/v16
 /.vs/THEgame/bin
