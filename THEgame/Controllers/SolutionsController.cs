@@ -29,7 +29,11 @@ namespace THEgame.Controllers
         {
             db = context;
         }
-        public async Task<IActionResult> Solution0Async(Solution0Model model)
+        public async Task<IActionResult> SolutionAsync()
+        { 
+            return View();             
+        }
+            public async Task<IActionResult> Solution0Async(Solution0Model model)
         {
             model.Imodel = new IndexModel();
             model.Imodel.modelA = new SolutionAModel();
@@ -72,6 +76,7 @@ namespace THEgame.Controllers
             ViewData["LocationType"] = model.Type;
             ViewData["Title"] = model.Name;
             model.Name = "";
+            model.Temp = model.Temp < 0 ? user.SpeedPenalty - (model.Temp/100)* 2 * user.SpeedPenalty : user.SpeedPenalty + (model.Temp / 100) * 2 * user.SpeedPenalty;
             return View(model);
         }
         [HttpGet]

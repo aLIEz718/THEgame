@@ -8,10 +8,10 @@ namespace THEgame.Models
         public SolutionAModel modelA { get; set; }
         public SolutionVModel modelV { get; set; }
         public int Id { get; set; }
-        public string Sex { get; set; }
-        public string Race { get; set; }
-        public string RaceDis { get; set; }
-        public string Speach { get; set; }
+        public string? Sex { get; set; }
+        public string? Race { get; set; }
+        public string? RaceDis { get; set; }
+        public string? Speach { get; set; }
         public int Glory { get; set; }
         public int Knowledge { get; set; }
         public int Power { get; set; }

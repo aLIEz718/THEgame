@@ -36,32 +36,56 @@
                                 </li>
                             }
                         }
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Solutions" asp-action="@(ViewData["UserLocation"])" id="location">В локацию</a>
-                        </li>
+                        @if (ViewData["UserLocation"] != null)
+                        {
+                            @if (ViewData["UserLocation"].ToString() != "Регистрация")
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Solutions" asp-action="@ViewData["UserLocation"]" id="location">В локацию</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" id="location">В локацию</a>
+                                </li>
+                            }
+                        }
                     </ul>
                 </div>
-                <div class="nav-item" style="text-align:right;">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Сменить пользователя</a>
-                </div>
+                @if (ViewData["UserLocation"] != null)
+                {
+                    @if (ViewData["UserLocation"].ToString() == "Регистрация")
+                    {
+                        <div class="nav-item" style="text-align:right;">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Регистрация</a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="nav-item" style="text-align:right;">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Сменить пользователя</a>
+                        </div>
+                    }
+                }
             </div>
         </nav>
     </header>
     @if (ViewData["LocationType"] != null)
     {
-    <div class="containerbody">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+        <div class="containerbody">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
     }
-    else 
+    else
     {
-    <div class="containerbodyindex">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+        <div class="containerbodyindex">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
     }
     <footer class="footer text-muted">
         <div class="container">

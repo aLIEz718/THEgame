@@ -18,5 +18,6 @@ namespace THEgame.Models
         public int CharLevel { get; set; }
         public string Speach { get; set; }
         public int? PartyId { get; set; }
+        public int SpeedPenalty { get; set; }
     }
 }

@@ -36,7 +36,6 @@ a {
 }
 .containerbodyindex {
     z-index: 1;
-    min-height: 600px;
     margin: 0 15%;
 }
 /* Sticky footer styles
@@ -180,15 +179,20 @@ body {
 }
 .rulesflex {
     display: flex;
-    max-height: 400px;
+    flex-direction: column;
+    font-size: 20px;
+
 }
 .rules {
-    list-style: decimal-leading-zero;
+    color: #0e5135;
+    list-style: square;
     font-family: Brush Script MT, Brush Script Std, cursive;
-    font-size: 20px;
     display: block;
     min-width: 50%;
 }
+    .rulesflex h3 {
+        border-bottom: 1px groove gray;
+    }
 .rulesimg {
     min-width: 50%;
     min-height: 400px;
