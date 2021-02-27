@@ -1,10 +1,11 @@
 ﻿@using THEgame.Models.Solutions
 @model Solution1Model
+@Html.HiddenFor(m => m.Temp)
 <h4 class="titlesol">@ViewData["Title"]</h4>
 <form asp-action="SendMessage" asp-controller="Solutions" class="locationcanvas">
     <img class="canvasimg" src="~/Ge5tF-aEUBQ.jpg" />
-    <div class="canvasright">
-        <a class="btn btn-light canvasbuttons" asp-area="" asp-controller="Solutions" asp-action="Solution3">Деревня "Хайлиф"</a>
+    <div class="canvasright">        
+        <button type="button" id="location1" disabled >@Html.ActionLink("Хайлиф", "Solution3", "Solutions", null, new { @class = "btn btn-light" })</button>
         <div class="canvaslog">
             <div class="formsol" id="flex2">
                 @foreach (ChatModel chat in ViewBag.Chat)
@@ -15,7 +16,8 @@
         </div>
         <div>
             <input class="textsol" type="text" asp-for="Name" id="flex1" autocomplete="off">
-            <button type="submit" style="float:right;" class="btn btn-warning">Отправить</button>
+            <input type="range" name="rangeInput" disabled class="form-range" min="0" id="textInput" value="@Model.Temp" >            
+            <button type="submit" id="buttonsubmit"  style="float:right;" class="btn btn-warning">Отправить</button>
         </div>
         <div class="canvasppl">
             <span class="border-bottom">Игроки в этой локации</span>
@@ -29,9 +31,16 @@
     </div>
 </form>
 <script type="text/javascript">
+    let inta = parseFloat(document.getElementById("Temp").value);    
+    
+    initializeClock('textInput');
+
     document.addEventListener('DOMContentLoaded', function () {
         for (let i = 1; i <= 4; i++) {
             $("#" + i).tooltip({ placement: 'right', html: true });
         }
+        let set = document.getElementById("textInput");
+        set.setAttribute("max", inta);
+        set.style.width = "70%";
     });
 </script>

@@ -70,6 +70,7 @@ namespace THEgame.Controllers
                 ViewData["LocationType"] = model.Type;
                 ViewData["Title"] = model.Name;
                 model.Name = "";
+                model.Temp = model.Temp < 0 ? user.SpeedPenalty - (model.Temp / 100) * 2 * user.SpeedPenalty : user.SpeedPenalty + (model.Temp / 100) * 2 * user.SpeedPenalty;
                 return View(model);
             }
             ViewData["UserLocation"] = "Solution" + user.CurLocationId;

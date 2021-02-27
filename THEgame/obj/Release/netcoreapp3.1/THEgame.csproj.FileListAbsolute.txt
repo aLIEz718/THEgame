@@ -128,10 +128,10 @@ C:\THEgame\THEgame\THEgame\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandar
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Home\IndexIt.cshtml.g.cs
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Solutions\Solution1.cshtml.g.cs
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Solutions\Solution2.cshtml.g.cs
-C:\THEgame\THEgame\THEgame\bin\Release\netcoreapp3.1\AjaxControlToolkit.dll
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Solutions\Solution3.cshtml.g.cs
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Solutions\Solution4.cshtml.g.cs
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Solutions\Solution5.cshtml.g.cs
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Home\IndexStats.cshtml.g.cs
-C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.MvcApplicationPartsAssemblyInfo.cache
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Solutions\Solution.cshtml.g.cs
+C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.MvcApplicationPartsAssemblyInfo.cache
+C:\THEgame\THEgame\THEgame\bin\Release\netcoreapp3.1\package.json

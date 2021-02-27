@@ -20,14 +20,15 @@ a {
     border-color: #1861ac;
 }
 .nav-item:hover {
-    background-color: rgba(252, 236, 236, 0.67);
-    border-radius: 100px;
-    font-size: 105%;
+    font-size: 22px;
+}
+.nav-item {
+    font-size: 20px;
 }
 .container {
     opacity: 0.9;
     z-index: 1;
-    max-height: 40px;
+    max-height: 38px;
 }
 .containerbody {
     z-index: 1;
@@ -145,23 +146,6 @@ body {
     float: right;
     padding-right: 8px;
 }
-
-.codetext {
-    display: flex;
-    align-items: stretch;
-    padding: 10px;
-    text-shadow: white 0 0 2px;
-    margin: 3px;
-    max-height: 550px;
-    text-align: left;
-    color: #0e5135;
-    font-size: 15px;
-    font-weight:bold;
-}
-    .codetext input {
-        color: #0e5135;
-    }
-
 .solflex {
     display: flex;
     flex-wrap: wrap;
@@ -183,23 +167,14 @@ body {
     font-size: 20px;
 
 }
-.rules {
-    color: #0e5135;
-    list-style: square;
-    font-family: Brush Script MT, Brush Script Std, cursive;
-    display: block;
-    min-width: 50%;
-}
-    .rulesflex h3 {
-        border-bottom: 1px groove gray;
-    }
+
 .rulesimg {
     min-width: 50%;
     min-height: 400px;
 }
     .rulesimg::after {
         content: "";
-        background: url(https://cdna.artstation.com/p/assets/images/images/019/149/832/large/the-commas-fight-club-watercolor.jpg?1562224547) 45% 49%;
+        background: url('https://sun9-29.userapi.com/impf/Iiqgs47oXKU9Uv3AzUMhs91ZlhuxvrK1VWn-_Q/xliKs6HTKS4.jpg?size=1331x2160&quality=96&sign=810be4610e1c2dc1858a8dee49cd8907&type=album') 70% 20% no-repeat;
         opacity: 0.2;
         top: 0px;
         left: 0;
@@ -302,14 +277,15 @@ body {
     height: 10px;
 }
 .titlesol {
-    height: 43px;
+    height: 40px;
     position: absolute;
     top: 1%;
-    left: 45%;
+    left: 55%;
     border: 1px solid gray;
     border-radius: 10px;
     padding: 5px;
-    box-shadow: 0px 1px 1px black;
+    font-size: 19px;
+    box-shadow: 0px 1px 1px gray;
 }
 .canvaslog {
     min-height: 55%;
@@ -361,19 +337,6 @@ body {
 .chatname {
     color: red;
 }
-.indexright {
-    margin-left: 50px;
-    margin-top: 1.6%;
-    font-size: 16px;
-    font-weight: bold;
-    color: #0e5135;
-}
-.perksindex {
-    margin-left: 50px;
-    margin-top: 1%;
-    font-size: 16px;
-    font-weight: bold;
-    min-width: 20%;
-    color: #0e5135;
-    height: 30px;
+.logout {
+    font-size: 23px;
 }

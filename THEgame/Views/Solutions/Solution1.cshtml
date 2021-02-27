@@ -4,7 +4,7 @@
 <form asp-action="SendMessage" asp-controller="Solutions" class="locationcanvas">
     <img class="canvasimg" src="~/MG9Ebpiu5Bs.jpg" />
     <div class="canvasright">
-        <a class="btn btn-light canvasbuttons" asp-area="" asp-controller="Solutions" asp-action="Solution2">Горная тропа</a>
+        <button class="btn btn-light canvasbuttons" id="location1">@Html.ActionLink("Горная тропа", "Solution2", "Solutions", null, new { @class = "text-decoration-none" })</button>
         <div class="canvaslog">
             <div class="formsol" id="flex2">
                 @foreach (ChatModel chat in ViewBag.Chat)
@@ -23,13 +23,7 @@
             <ul class="canvasppllist">
                 @foreach (UserModel country in ViewBag.Users)
                 {
-                    <li>
-                        @country.Name <span class="classicon" disabled="disabled" title="Пол: @country.Sex;<br> Раса: @country.Race;<br> Уровень: @country.CharLevel;">
-                            <form asp-action="PartyRequest" asp-controller="Solutions" asp-route-requestuserid="@country.Id" req id="@country.Id">
-                                <a onclick="SaveRequest(@country.Id)">&#929;</a>
-                            </form>
-                        </span>
-                    </li>
+                   <li>@country.Name <span class="classicon" id="@country.Id" disabled="disabled" title="Пол: @country.Sex; Раса: @country.Race; Уровень: @country.CharLevel;">&#936;</span></li>  
                 }
             </ul>
         </div>

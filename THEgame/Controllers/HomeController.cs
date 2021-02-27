@@ -136,7 +136,7 @@ namespace THEgame.Controllers
         public async Task<IActionResult> RulesAsync()
         {
             UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Name == User.Identity.Name);
-            ViewData["UserLocation"] = "Регистрация";            
+            ViewData["UserLocation"] = "Solution" + user.CurLocationId;
             return View();
         }
         

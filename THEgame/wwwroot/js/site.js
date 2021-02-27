@@ -17,4 +17,32 @@ for (i = 0; i < dropdown.length; i++) {
         }
     });
 }
+function textconsole(param) {
+    let a = document.getElementById('flex2');
+    var p = document.createElement("div");
+    p.className = 'chatmessage';
+    p.textContent = "System: " + param;
+    a.append(p)
+}
+function initializeClock(id) {
+    var clock = document.getElementById(id);
+    textconsole("Вы можете перейти в следующую локацию через " + inta + " секунд");
+    let but = document.getElementById("location1");
+    let but1 = document.getElementById("location2");
+    let but2 = document.getElementById("location3");
 
+    function updateClock() {
+        clock.value = inta;
+        inta = inta - 1;
+
+        if (inta < 0) {
+            clearInterval(timeinterval);
+            but.removeAttribute("disabled")
+            but1.removeAttribute("disabled")
+            but2.removeAttribute("disabled")
+        }
+    }
+
+    updateClock();
+    var timeinterval = setInterval(updateClock, 1000);
+}
