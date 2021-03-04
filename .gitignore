@@ -18,3 +18,8 @@ Version.cpp
 /THEgame
 /THEgame/bin
 /THEgame/obj
+/THEgame/bin/Release/netcoreapp3.1/THEgame.deps.json
+/THEgame/obj/project.assets.json
+/THEgame/obj/Release/netcoreapp3.1/THEgame.assets.cache
+/THEgame/obj/THEgame.csproj.nuget.cache
+/.vs/THEgame/v16/.suo
