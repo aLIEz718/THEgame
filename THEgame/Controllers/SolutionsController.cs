@@ -56,6 +56,7 @@ namespace THEgame.Controllers
             {
                 var entityuser = db.Users.Where(u => u.Id == user.Id).FirstOrDefault();
                 entityuser.CurLocationId = model.Id;
+                entityuser.SpeedPenalty = 10;
                 await db.SaveChangesAsync();
                 var query = (from c in db.Users
                              where c.CurLocationId == number

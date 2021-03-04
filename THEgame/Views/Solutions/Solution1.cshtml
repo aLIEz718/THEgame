@@ -4,7 +4,7 @@
 <form asp-action="SendMessage" asp-controller="Solutions" class="locationcanvas">
     <img class="canvasimg" src="~/MG9Ebpiu5Bs.jpg" />
     <div class="canvasright">
-        <button class="btn btn-light canvasbuttons" id="location1">@Html.ActionLink("Горная тропа", "Solution2", "Solutions", null, new { @class = "text-decoration-none" })</button>
+        <button type="button" class="btn btn-light canvasbuttons" id="location1">@Html.ActionLink("Горная тропа", "Solution2", "Solutions", null, new { @class = "text-decoration-none" })</button>
         <div class="canvaslog">
             <div class="formsol" id="flex2">
                 @foreach (ChatModel chat in ViewBag.Chat)

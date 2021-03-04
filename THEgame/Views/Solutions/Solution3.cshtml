@@ -5,9 +5,9 @@
 <form asp-action="SendMessage" asp-controller="Solutions" class="locationcanvas">
     <img class="canvasimg" src="~/_gzjX5-TYSA.jpg" />
     <div class="canvasright">
-        <button class="btn btn-light canvasbuttons" disabled id="location1">@Html.ActionLink("Горная тропа", "Solution2", "Solutions", null, new { @class = "text-decoration-none" })</button>
-        <button class="btn btn-light canvasbuttons" disabled id="location2">@Html.ActionLink("Мертвый лес", "Solution4", "Solutions", null, new { @class = "text-decoration-none" })</button>
-        <button class="btn btn-light canvasbuttons" disabled id="location3">@Html.ActionLink("Комариная трясина", "Solution5", "Solutions", null, new { @class = "text-decoration-none" })</button>
+        <button type="button" class="btn btn-light canvasbuttons" disabled id="location1">@Html.ActionLink("Горная тропа", "Solution2", "Solutions", null, new { @class = "text-decoration-none" })</button>
+        <button type="button" class="btn btn-light canvasbuttons" disabled id="location2">Мертвый лес@*Html.ActionLink("Мертвый лес", "Solution4", "Solutions", null, new { @class = "text-decoration-none" })*@</button>
+        <button type="button" class="btn btn-light canvasbuttons" disabled id="location3">@Html.ActionLink("Комариная трясина", "Solution5", "Solutions", null, new { @class = "text-decoration-none" })</button>
         <div class="canvaslog">
             <div class="formsol" id="flex2">
                 @foreach (ChatModel chat in ViewBag.Chat)
@@ -49,5 +49,9 @@
         set.style.width = "100%";
         set.style.height = "1px";
         set.style.margin = "auto";
+    });
+
+    $("#location2").bind("click", () => {
+        alert("Доступ сюда закрыт!");
     });
 </script>
