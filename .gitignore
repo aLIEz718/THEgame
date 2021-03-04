@@ -16,3 +16,5 @@ Version.h
 Version.cpp
 /.vs
 /THEgame
+/THEgame/bin
+/THEgame/obj
