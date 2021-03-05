@@ -1,0 +1,64 @@
+﻿@using THEgame.Models.Solutions
+@model Solution1Model
+<h4 class="titlesol">@ViewData["Title"]</h4>
+<form asp-action="SendMessage" asp-controller="Solutions" class="locationcanvas">
+    <img class="canvasimg" src="~/MG9Ebpiu5Bs.jpg" />
+    <div class="canvasright">
+        <button type="button" class="btn btn-light canvasbuttons" id="location1">@Html.ActionLink("Горная тропа", "Solution2", "Solutions", null, new { @class = "text-decoration-none" })</button>
+        <div class="canvaslog">
+            <div class="formsol" id="flex2">
+                @foreach (ChatModel chat in ViewBag.Chat)
+                {
+                    <div class="chatmessage"><span class="chatname">@chat.UserName:</span> @chat.Message</div>
+                }
+            </div>
+        </div>
+        <div>
+            <input class="textsol" asp-for="Name" type="text" id="flex1" autocomplete="off">
+            <button type="submit" style="float:right;" class="btn btn-warning">Отправить</button>
+        </div>
+
+        <div class="canvasppl">
+            <span class="border-bottom">Игроки в этой локации</span>
+            <ul class="canvasppllist">
+                @{var count = 0; 
+            foreach (UserModel country in ViewBag.Users)
+            {
+                
+                    <li>@country.Name <span class="classicon" id="@count" disabled="disabled" title="Пол: @country.Sex; Раса: @country.Race; Уровень: @country.CharLevel;">&#936;</span></li>
+                    count++;
+                }
+                }
+                </ul>
+        </div>
+    </div>
+</form>
+<script type="text/javascript">
+    let count = parseInt($(".canvasppllist").length);
+    document.addEventListener('DOMContentLoaded', function () {
+        for (let i = 0; i <= count; i++) {
+            $("#" + i).tooltip({ placement: 'right', html: true });
+        }
+    });
+    function SaveRequest(userid) {
+        var actionUrl = "@Url.Action("PartyRequest", "Solutions", new { requestuserid = 2 })";
+        var dataToSend = $("#" + userid).serialize();
+
+        jQuery.ajax({
+            url: actionUrl,
+            type: 'POST',
+            dataType: 'json',
+            data: dataToSend,
+            async: true,
+            success: function (result) {
+                $("#" + userid).hide();
+            },
+            error: function (e, str1) {
+                if (str1 == "parsererror")
+                    alert("Доступ запрещен!.");
+                else
+                    alert("При загрузке данных произошла ошибка.");
+            }
+        });
+    }
+</script>

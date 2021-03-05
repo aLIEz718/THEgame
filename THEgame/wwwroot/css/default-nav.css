@@ -1,0 +1,155 @@
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-item:hover {
+    font-size: 22px;
+}
+
+.nav-item {
+    font-size: 20px;
+}
+
+    .nav-item:nth-child(1) {
+        min-width: 160px;
+    }
+
+    .nav-item:nth-child(2) {
+        min-width: 180px;
+    }
+
+    .nav-item:nth-child(3) {
+        min-width: 260px;
+    }
+
+.container {
+    opacity: 0.9;
+    z-index: 1;
+    max-height: 38px;
+}
+
+.containerbody {
+    z-index: 1;
+    min-height: 600px;
+    margin: 0 10%;
+}
+
+.containerbodyindex {
+    z-index: 1;
+    margin: 0 15%;
+}
+/* Sticky footer styles
+-------------------------------------------------- */
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, .1);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+    margin-bottom: 1.2%;
+}
+/* Фиксированный боковых навигационных ссылок, полной высоты */
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+    /* Стиль боковых навигационных ссылок и раскрывающейся кнопки */
+    .sidenav a, .dropdown-btn {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 20px;
+        color: #090909;
+        display: block;
+        border: none;
+        background: none;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        outline: none;
+    }
+
+        /* При наведении курсора мыши */
+        .sidenav a:hover, .dropdown-btn:hover {
+            color: #f1f1f1;
+        }
+
+/* Основное содержание */
+.main {
+    margin-left: 200px; /* То же, что и ширина боковой навигации */
+    font-size: 20px; /* Увеличенный текст для включения прокрутки */
+    padding: 0px 10px;
+}
+
+/* Добавить активный класс для кнопки активного выпадающего списка */
+.active {
+    background-color: green;
+    color: white;
+}
+
+/* Выпадающий контейнер (по умолчанию скрыт). Необязательно: добавьте более светлый цвет фона и некоторые левые отступы, чтобы изменить дизайн выпадающего содержимого */
+.dropdown-container {
+    display: none;
+    background-color: #1861ac;
+    padding-left: 8px;
+}
+
+/* Необязательно: стиль курсора вниз значок */
+.fa-caret-down {
+    float: right;
+    padding-right: 8px;
+}
