@@ -1,4 +1,4 @@
-﻿/// <binding Clean='clean' />
+﻿/// <binding BeforeBuild='less' />
 "use strict";
 
 var gulp = require("gulp"),
@@ -9,7 +9,7 @@ var paths = {
 };
 //  регистрируем задачу по преобразованию styles.less в файл css
 gulp.task("less", function () {
-    return gulp.src('wwwroot/css/thegame.less')
+    return gulp.src('wwwroot/css/site.less')
         .pipe(less())
         .pipe(gulp.dest(paths.webroot + '/css'))
 });

@@ -26,7 +26,7 @@
         "dependencies": {
           "EntityFramework": "6.4.4",
           "HelperMethods.HTMLHelper": "1.0.1",
-          "Less.js": "1.5.1",
+          "Less": "3.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.3",
           "Microsoft.EntityFrameworkCore.Analyzers": "5.0.3",
           "Microsoft.EntityFrameworkCore.Design": "5.0.3",
@@ -346,7 +346,17 @@
         }
       },
       "jQuery/1.8.0": {},
-      "Less.js/1.5.1": {},
+      "Less/3.0.0": {
+        "runtime": {
+          "lib/Less.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/Less.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.7.0": {},
       "Microsoft.Data.SqlClient/2.0.1": {
         "dependencies": {
@@ -3157,12 +3167,12 @@
       "path": "jquery/1.8.0",
       "hashPath": "jquery.1.8.0.nupkg.sha512"
     },
-    "Less.js/1.5.1": {
+    "Less/3.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-plK0M1LFQE0VUXRlLXLxWEns+2OhqJ4R4Z23kJGfmpRHVg1h3MfXasGJ1ZBrxpFDC6pDcPnN26W2hA1npjzyZQ==",
-      "path": "less.js/1.5.1",
-      "hashPath": "less.js.1.5.1.nupkg.sha512"
+      "sha512": "sha512-seAHLXow35iG3Um5AkijYSLk6gFhrrPcXnsvIYMQx3VhA9wIoLTrQWpyGXrSMI9CCj/BcRNx8gFAIddhhK2TGg==",
+      "path": "less/3.0.0",
+      "hashPath": "less.3.0.0.nupkg.sha512"
     },
     "Microsoft.CSharp/4.7.0": {
       "type": "package",

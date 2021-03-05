@@ -21,12 +21,14 @@ namespace THEgame.Controllers
         [HttpGet]
         public IActionResult Login()
         {
+            ViewData["Title"] = "Войдите в аккаунт";
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginModel model)
         {
+            ViewData["Title"] = "Войдите в аккаунт";
             if (ModelState.IsValid)
             {
                 UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Name == model.Name && u.Password == model.Password);
@@ -37,6 +39,7 @@ namespace THEgame.Controllers
                     return RedirectToAction("Index", "Home");
                 }
                 ModelState.AddModelError("", "Некорректные логин и(или) пароль");
+                
             }
             ViewData["UserLocation"] = "Регистрация";
             return View(model);
@@ -44,6 +47,7 @@ namespace THEgame.Controllers
         [HttpGet]
         public IActionResult Register()
         {
+            ViewData["Title"] = "Регистрация";
             ViewData["UserLocation"] = "Регистрация";
             return View();
         }

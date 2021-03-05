@@ -135,8 +135,8 @@ namespace THEgame.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> RulesAsync()
         {
-            UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Name == User.Identity.Name);
-            ViewData["UserLocation"] = "Solution" + user.CurLocationId;
+            UserModel user = await db.Users.FirstOrDefaultAsync(u => u.Name == User.Identity.Name);            
+            ViewData["UserLocation"] = user == null ? "Регистрация" : "Solution" + user.CurLocationId;
             return View();
         }
         

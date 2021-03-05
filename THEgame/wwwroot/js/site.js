@@ -26,10 +26,11 @@ function textconsole(param) {
 }
 function initializeClock(id) {
     var clock = document.getElementById(id);
+    let but = [];
     textconsole("Вы можете перейти в следующую локацию через " + inta + " секунд");
-    let but = document.getElementById("location1");
-    let but1 = document.getElementById("location2");
-    let but2 = document.getElementById("location3");
+    for (let i = 1; i <= id; i++) {
+        but.push(document.getElementById("location" + i));
+    }
 
     function updateClock() {
         clock.value = inta;
@@ -37,9 +38,9 @@ function initializeClock(id) {
 
         if (inta < 0) {
             clearInterval(timeinterval);
-            but.removeAttribute("disabled")
-            but1.removeAttribute("disabled")
-            but2.removeAttribute("disabled")
+            for (let i = 0; i < id; i++) {
+                but[i].removeAttribute("disabled");
+            }
         }
     }
 

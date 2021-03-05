@@ -16,31 +16,41 @@
         </div>
         <div>
             <input class="textsol" type="text" asp-for="Name" id="flex1" autocomplete="off">
-            <input type="range" name="rangeInput" disabled class="form-range" min="0" id="textInput" value="@Model.Temp" >            
-            <button type="submit" id="buttonsubmit" style="float:right;" class="btn btn-warning">Отправить</button>
+            <div style="display: flex;">
+                <input type="range" name="rangeInput" disabled min="0" id="textInput" value="@Model.Temp">
+                <button type="submit" id="buttonsubmit" style="float:right;" class="btn btn-warning">Отправить</button>
+            </div>
         </div>
         <div class="canvasppl">
             <span class="border-bottom">Игроки в этой локации</span>
             <ul class="canvasppllist">
-            @foreach (UserModel country in ViewBag.Users)
-            {                
-                    <li>@country.Name <span class="classicon" id="@country.Id" disabled="disabled" title="Пол: @country.Sex; Раса: @country.Race; Уровень: @country.CharLevel;">&#936;</span></li>                
-            }
+            @{var count = 0; 
+            foreach (UserModel country in ViewBag.Users)
+            {
+                
+                    <li>@country.Name <span class="classicon" id="@count" disabled="disabled" title="Пол: @country.Sex; Раса: @country.Race; Уровень: @country.CharLevel;">&#936;</span></li>
+                    count++;
+                }
+                }
                 </ul>
         </div>
     </div>
 </form>
 <script type="text/javascript">
+    let count = parseInt($(".canvasppllist").length);
     let inta = parseFloat(document.getElementById("Temp").value);    
     
     initializeClock('textInput');
 
     document.addEventListener('DOMContentLoaded', function () {
-        for (let i = 1; i <= 4; i++) {
+        for (let i = 0; i <= count; i++) {
             $("#" + i).tooltip({ placement: 'right', html: true });
         }
         let set = document.getElementById("textInput");
         set.setAttribute("max", inta);
-        set.style.width = "68%";
+        set.style.width = "100%";
+        
+        set.style.height = "1px";
+        set.style.margin = "auto";
     });
 </script>

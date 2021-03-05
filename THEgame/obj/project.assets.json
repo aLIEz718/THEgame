@@ -39,8 +39,14 @@
       "jQuery/1.8.0": {
         "type": "package"
       },
-      "Less.js/1.5.1": {
-        "type": "package"
+      "Less/3.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/Less.dll": {}
+        },
+        "runtime": {
+          "lib/Less.dll": {}
+        }
       },
       "Microsoft.CSharp/4.7.0": {
         "type": "package",
@@ -1721,17 +1727,18 @@
         "jquery.nuspec"
       ]
     },
-    "Less.js/1.5.1": {
-      "sha512": "plK0M1LFQE0VUXRlLXLxWEns+2OhqJ4R4Z23kJGfmpRHVg1h3MfXasGJ1ZBrxpFDC6pDcPnN26W2hA1npjzyZQ==",
+    "Less/3.0.0": {
+      "sha512": "seAHLXow35iG3Um5AkijYSLk6gFhrrPcXnsvIYMQx3VhA9wIoLTrQWpyGXrSMI9CCj/BcRNx8gFAIddhhK2TGg==",
       "type": "package",
-      "path": "less.js/1.5.1",
+      "path": "less/3.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "content/Scripts/less-1.5.1.js",
-        "content/Scripts/less-1.5.1.min.js",
-        "less.js.1.5.1.nupkg.sha512",
-        "less.js.nuspec"
+        "less.3.0.0.nupkg.sha512",
+        "less.nuspec",
+        "lib/Less.dll",
+        "lib/Less.pdb",
+        "lib/LessDatabaseSchema.sql"
       ]
     },
     "Microsoft.CSharp/4.7.0": {
@@ -6149,7 +6156,7 @@
     ".NETCoreApp,Version=v3.1": [
       "EntityFramework >= 6.4.4",
       "HelperMethods.HTMLHelper >= 1.0.1",
-      "Less.js >= 1.5.1",
+      "Less >= 3.0.0",
       "Microsoft.EntityFrameworkCore >= 5.0.3",
       "Microsoft.EntityFrameworkCore.Analyzers >= 5.0.3",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.3",
@@ -6205,9 +6212,9 @@
             "target": "Package",
             "version": "[1.0.1, )"
           },
-          "Less.js": {
+          "Less": {
             "target": "Package",
-            "version": "[1.5.1, )"
+            "version": "[3.0.0, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
@@ -6265,5 +6272,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.112\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"Less 3.0.0\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\", а не целевой платформы проекта \".NETCoreApp,Version=v3.1\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "Less",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

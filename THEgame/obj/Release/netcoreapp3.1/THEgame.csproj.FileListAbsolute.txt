@@ -136,4 +136,6 @@ C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Solutions\Solut
 C:\THEgame\THEgame\THEgame\bin\Release\netcoreapp3.1\package.json
 C:\THEgame\THEgame\THEgame\bin\Release\netcoreapp3.1\Humanizer.dll
 C:\THEgame\THEgame\THEgame\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\Razor\Views\Solutions\SolutionPartial.cshtml.g.cs
+C:\THEgame\THEgame\THEgame\bin\Release\netcoreapp3.1\Less.dll
 C:\THEgame\THEgame\THEgame\obj\Release\netcoreapp3.1\THEgame.MvcApplicationPartsAssemblyInfo.cache

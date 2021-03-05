@@ -1,22 +1,23 @@
 ﻿@model THEgame.ViewModels.LoginModel
+<div class="titlesol">@ViewData["Title"]</div>
 <div class="logoncontainer">
-<h2>Вход на сайт</h2>
 <form asp-action="Login" asp-controller="Account" asp-anti-forgery="true">
     <div class="validation" asp-validation-summary="ModelOnly"></div>
     <div>
         <div class="form-group">
             <label asp-for="Name">Логин</label>
-            <input type="text" asp-for="Name" class="form-control-sm" />
+            <br />
+            <input type="text" asp-for="Name" class="form-control-lg" />
             <span asp-validation-for="Name" />
+            <br />
             <label asp-for="Password">Пароль</label>
-            <input asp-for="Password" class="form-control-sm" />
+            <br />
+            <input asp-for="Password" class="form-control-lg" />
             <span asp-validation-for="Password" />
         </div>
-        <div>
-            <span class="regtext">Забыл старую или еще нету?<a asp-area="" asp-controller="Account" asp-action="Register">Создай новую!</a></span>
-        </div>        
-        <div class="form-group">
-            <input type="submit" value="Войти" class="btn btn-outline-dark" style="font-size: 24px;font-weight: bold;" />
+        <div style="margin-top:5px;">
+            <span class="regtext">Забыл старую или еще нету?<a asp-area="" asp-controller="Account" asp-action="Register">&nbsp;Создай новую!</a></span>
+            <input type="submit" value="Войти" class="btn btn-outline-dark"/>
         </div>
     </div>
 </form>
